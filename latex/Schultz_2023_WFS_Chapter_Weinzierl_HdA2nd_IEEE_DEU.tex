@@ -1,0 +1,151 @@
+% wfs_chapter_hda
+% - git repository https://github.com/spatialaudio/wfs_chapter_hda
+% - drafts for the chapters (english, german) on **Wave Field Synthesis** for
+% Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
+% https://link.springer.com/referencework/10.1007/978-3-662-60357-4
+% - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
+% - source code under MIT license https://opensource.org/licenses/MIT
+% - Springer has copyright to the final english / german chapters and their layouts
+% - we might also find https://git.iem.at/zotter/wfs-basics useful
+% - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+
+% Authors:
+% - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+% - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+% - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+%
+% pdflatex -shell-escape Schultz_2021_apter_Weinzierl_HdA2nd_IEEE_DEU.tex
+% bibtex Schultz_2021_apter_Weinzierl_HdA2nd_IEEE_DEU.aux
+%
+\documentclass[10pt, journal, transmag]{IEEEtran}
+
+%\newcommand*{\SPRINGER}{}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\ifdefined\SPRINGER
+    % either apacite (also check setup at the end of this file):
+    \usepackage{apacite} % closely to the format which the Handbuch asks for
+    % some additional mods to get a similar layout as the Handbuch
+    \renewcommand\bibliographytypesize{\footnotesize}
+    \addtolength{\textheight}{-0.5in}
+    \usepackage{url}
+    \let\cite\shortcite
+\else
+  % or IEEEtran  (also check setup at the end of this file):
+    \usepackage{cite}
+    \usepackage[spaces,hyphens]{xurl}
+    \usepackage[colorlinks,allcolors=C0]{hyperref}
+\fi
+
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{trfsigns}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{comment}
+\usepackage{../macro_DEU}  % author macros
+
+\includecomment{plotfigures}
+%\excludecomment{plotfigures}
+%
+\makeindex
+%
+% ##############################################################################
+\ifdefined\SPRINGER
+    % use this only when \usepackage{apacite} is used
+    % we try to get close to desired cite/reference style by modifying the apacite
+    % this might be not needed if a dedicated Springer bibstyle is utilized
+
+    % inspired by https://tex.stackexchange.com/questions/123938/modifying-apacite-reference-style
+    \AtBeginDocument{%
+    \renewcommand{\BCBT}{,}
+    \renewcommand{\BCBL}{,}
+    \renewcommand{\BBAA}{und}
+    \renewcommand{\APACjournalVolNumPages}[4]{%
+       \Bem{#1}%             journal
+       \ifx\@empty#2\@empty
+       \else
+         \unskip, \textbf{{#2}}%  volume bold
+       \fi
+       \ifx\@empty#3\@empty
+       \else
+         \unskip{(#3)}%      issue number no space
+       \fi
+       \ifx\@empty#4\@empty
+       \else
+         \unskip, {#4}%      pages
+       \fi
+    }
+    % further stuff derived with apacite manual
+    \renewenvironment{APACrefDOI}{\doiprefix}{}
+    \renewenvironment{APACrefURL}[2][]{Am #1 zugegriffen auf #2}{}
+    \renewcommand{\APACrefbtitle}[2]{#1}}
+    \renewcommand{\APACcitebtitle}[1]{#1}
+\fi
+% ##############################################################################
+
+\begin{document}
+\title{Kapitel: Wellenfeldsynthese}
+\author{
+% either:
+\IEEEauthorblockN{Frank Schultz, Nara Hahn, Sascha Spors}
+\IEEEauthorblockA{%Signalverarbeitung und virtuelle Akustik\\
+Institut f{\"u}r Nachrichtentechnik\\Universit{\"a}t Rostock, Rostock, Deutschland\\\{frank.schultz, nara.hahn, sascha.spors\}@uni-rostock.de\vspace{2cm}}
+% or:
+% \IEEEauthorblockN{Frank Schultz}
+% \IEEEauthorblockA{Signalverarbeitung und virtuelle Akustik\\Institut f{\"u}r Nachrichtentechnik\\Universit{\"a}t Rostock\\frank.schultz@uni-rostock.de}
+% \and
+% \IEEEauthorblockN{Nara Hahn}
+% \IEEEauthorblockA{Signalverarbeitung und virtuelle Akustik\\Institut f{\"u}r Nachrichtentechnik\\Universit{\"a}t Rostock\\nara.hahn@uni-rostock.de}
+% \and
+% \IEEEauthorblockN{Sascha Spors}
+% \IEEEauthorblockA{Signalverarbeitung und virtuelle Akustik\\Institut f{\"u}r Nachrichtentechnik\\Universit{\"a}t Rostock\\sascha.spors@uni-rostock.de}
+% we use thanks to match it better with the final Springer layout
+\thanks{Frank Schultz, Nara Hahn, Sascha Spors}
+\thanks{Institut f{\"u}r Nachrichtentechnik, Universit{\"a}t Rostock, Rostock, Deutschland}
+\thanks{E-Mail: \{frank.schultz, nara.hahn, sascha.spors\}@uni-rostock.de}
+\thanks{Version: \today, draft for the upcoming chapter in}
+\thanks{https://doi.org/10.1007/978-3-662-60357-4}
+}
+%
+\markboth{Schultz, Hahn, Spors: WFS Draft für Weinzierl (Hg.), Handbuch der Audiotechnik, Springer, 2. Auflage}%
+{Schultz, Hahn, Spors: WFS}
+%
+\IEEEtitleabstractindextext{
+%\begin{abstract}
+%\input{abstract_DEU}
+%\end{abstract}
+%
+\begin{IEEEkeywords}
+Spatialisierung,
+Virtuelle Punktquelle,
+Wellenfeld,
+Wellenfront,
+Wellenfrontkrümmung,
+Räumliches Aliasing
+\end{IEEEkeywords}}
+%
+\maketitle
+%
+\section*{Zusammenfassung}
+\input{abstract_DEU}
+%
+\input{wfs_manuscript_DEU}
+%
+\section*{Danksagung}
+\input{acknowledgment_DEU}
+%
+\ifdefined\SPRINGER
+    \bibliographystyle{apacite}
+    \bibliography{wfs_references_springer}
+\else
+    \bibliographystyle{IEEEtran}
+    \bibliography{wfs_references}
+\fi
+%
+\printindex
+%
+\end{document}

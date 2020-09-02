@@ -1,0 +1,916 @@
+%% wfs_chapter_hda
+%% - git repository https://github.com/spatialaudio/wfs_chapter_hda
+%% - drafts for the chapters (english, german) on **Wave Field Synthesis** for
+%% Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
+%% https://link.springer.com/referencework/10.1007/978-3-662-60357-4
+%% - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
+%% - source code under MIT license https://opensource.org/licenses/MIT
+%% - Springer has copyright to the final english / german chapters and their layouts
+%% - we might also find https://git.iem.at/zotter/wfs-basics useful
+%% - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+
+%% Authors:
+%% - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+%% - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+%% - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+
+%% This BibTeX bibliography file was created using BibDesk.
+%% http://bibdesk.sourceforge.net/
+
+%% Created for Frank Schultz at 2022-06-01 2:27:40 PM +0200
+
+
+%% Saved with string encoding Unicode (UTF-8)
+
+@article{Fletcher1934,
+	author = {Harvey Fletcher},
+	journal = {Electrical Engineering},
+	number = {1},
+	pages = {9-11},
+	title = {{Auditory perspective -- Basic requirements}},
+	volume = {53},
+	year = {1934},
+	doi = {https://doi.org/10.1109/EE.1934.6540356},
+	url = {https://doi.org/10.1109/EE.1934.6540356}}
+
+@article{Deregowski1983,
+	author = {S. M. Deregowski AND S. M. Brown},
+	journal = {Geophysical Prospecting},
+	number = {2},
+	pages = {293-333},
+	title = {{A Theory of Acoustic Diffractors Applied to 2-D Models}},
+	volume = {31},
+	year = {1983},
+	doi = {https://doi.org/10.1111/j.1365-2478.1983.tb01055.x},
+	url = {https://doi.org/10.1111/j.1365-2478.1983.tb01055.x}}
+
+@article{Bleistein1986,
+	author = {Norman Bleistein},
+	journal = {Geophysical Prospecting},
+	number = {5},
+	pages = {686-703},
+	title = {{Two-And-One-Half Dimensional In-Plane Wave Propagation}},
+	volume = {34},
+	year = {1986},
+	doi = {https://doi.org/10.1111/j.1365-2478.1986.tb00488.x},
+	url = {https://doi.org/10.1111/j.1365-2478.1986.tb00488.x}}
+
+@book{Bleistein2001,
+	author = {Norman Bleistein AND Jack K. Cohen AND John W. Stockwell},
+	publisher = {Springer},
+	title = {{Mathematics of Multidimensional Seismic Imaging, Migration, and Inversion}},
+	year = {2001},
+	doi = {https://doi.org/10.1007/978-1-4613-0001-4},
+	url = {https://doi.org/10.1007/978-1-4613-0001-4}}
+
+@url{SchultzHahnSpors2023,
+	author = {Frank Schultz AND Nara Hahn AND Sascha Spors},
+	title = {Wellenfeldsynthese},
+	url = {https://www.github.com/spatialaudio/wfs_chapter_hda},
+	year = {2023}}
+
+@inproceedings{Corteel2008_AES,
+	address = {Amsterdam},
+	author = {Etienne Corteel AND Renato Pellegrini AND Clemens Kuhn-Rahloff},
+	booktitle = {124 Audio Eng. Soc. Conv., Amsterdam, Paper 7362},
+	title = {{Wave Field Synthesis with increased aliasing frequency}},
+	year = {2008},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14492}}
+
+@book{Moeser2015_book,
+	author = {Michael Möser},
+	publisher = {Springer},
+	title = {{Technische Akustik}},
+	year = {2015},
+	edition = {10.},
+	doi = {https://doi.org/10.1007/978-3-662-47704-5},
+	url = {https://doi.org/10.1007/978-3-662-47704-5}}
+
+@book{Kammeyer2022_book,
+	author = {Karl-Dirk Kammeyer AND Kristian Kroschel},
+	publisher = {Springer Vieweg},
+	title = {{Digitale Signalverarbeitung}},
+	year = {2022},
+	edition = {10.}}
+
+@article{Hahn2022_JAES,
+	author = {Nara Hahn AND Frank Schultz AND Sascha Spors},
+	journal = {J. Audio Eng. Soc.},
+	number = {6},
+	pages = {510-525},
+	title = {{Cylindrical Radial Filter Design With Application to Local Wave Field Synthesis}},
+	volume = {70},
+	year = {2022},
+	doi = {https://doi.org/10.17743/jaes.2022.0013},
+	url = {https://doi.org/10.17743/jaes.2022.0013}}
+
+@inproceedings{Goebel2019,
+	author = {Johannes Goebel},
+	booktitle = {23rd Intl. Congr. on Acoustics},
+	pages = {1148-1155},
+	title = {{The EMPAC high-resolution modular loudspeaker array for wave field synthesis}},
+	year = {2019},
+	url = {https://pub.dega-akustik.de/ICA2019/data/articles/000029.pdf}}
+
+@url{url:holoplot,
+	author = {{Holoplot}},
+	lastchecked = {2023-06-02},
+	title = {{Holoplot}},
+	url = {https://holoplot.com/}}
+
+@url{url:amadeus_holophonix,
+	author = {{Amadeus HOLOPHONIX}},
+	lastchecked = {2023-06-02},
+	title = {{Amadeus HOLOPHONIX}},
+	url = {https://holophonix.xyz/}}
+
+@url{url:iosono,
+	author = {{Encircled Audio IOSONO inside}},
+	lastchecked = {2023-06-02},
+	title = {{Encircled Audio IOSONO inside}},
+	url = {https://encircled-audio.com/}}
+
+@url{url:flux_spat_revolution,
+	author = {{Flux SPAT Revolution Ultimate}},
+	lastchecked = {2023-06-02},
+	title = {{Flux Spat Revolution Ultimate}},
+	url = {https://www.flux.audio/project/spat-revolution/}}
+
+@url{url:spat_revolution,
+	author = {{IRCAM SPAT Revolution}},
+	lastchecked = {2023-06-02},
+	title = {{IRCAM SPAT Revolution}},
+	url = {https://forum.ircam.fr/projects/detail/spat/}}
+
+@url{url:panoramix,
+	author = {{IRCAM Panoramix}},
+	lastchecked = {2023-06-02},
+	title = {{IRCAM Panoramix}},
+	url = {https://forum.ircam.fr/projects/detail/panoramix/}}
+
+@url{url:wonder_lite,
+	author = {{wonder}},
+	lastchecked = {2023-06-02},
+	title = {{wonder}},
+	url = {https://github.com/ntonnaett/wonder}}
+
+@url{url:wonder,
+	author = {{wonder}},
+	lastchecked = {2023-06-02},
+	title = {{wonder}},
+	url = {https://github.com/dvzrv/wonder}}
+
+@url{url:wfscollider,
+	author = {{WFSCollider}},
+	lastchecked = {2023-06-02},
+	title = {{WFSCollider}},
+	url = {https://github.com/GameOfLife/WFSCollider}}
+
+@url{url:ssr,
+	author = {{Sound Scape Renderer}},
+	lastchecked = {2023-06-02},
+	title = {{Sound Scape Renderer}},
+	url = {https://github.com/SoundScapeRenderer}}
+
+@url{url:wfs-diy,
+	author = {{Wave Field Synthesis DIY}},
+	lastchecked = {2023-06-02},
+	title = {{Wave Field Synthesis DIY}},
+	url = {https://wfs-diy.net/}}
+
+@url{url:iem-wfs,
+	author = {{IEM WFS}},
+	lastchecked = {2023-06-02},
+	title = {{IEM WFS}},
+	url = {https://git.iem.at/audioplugins/iem-wfs}}
+
+@inproceedings{Geier2008,
+	address = {Berlin},
+	author = {Matthias Geier AND Sascha Spors AND Stefan Weinzierl},
+	booktitle = {6th Intl. Workshop on Adaptive Multimedia Retrieval, Berlin},
+	pages = {1-17},
+	title = {{The Future of Audio Reproduction, Technology---Formats---Applications}},
+	year = {2008},
+	doi = {https://doi.org/10.1007/978-3-642-14758-6_1},
+	url = {https://doi.org/10.1007/978-3-642-14758-6_1}}
+
+@inproceedings{Vaananen2002,
+	address = {Espoo},
+	author = {Riitta V{\"a}{\"a}n{\"a}nen AND Oliver Warusfel AND Marc Emerit},
+	booktitle = {22nd Intl. Audio Eng. Soc. Conf., Espoo, Paper 000261},
+	number = {\#000261},
+	title = {{Encoding and Rendering of Perceptual Sound Scenes in the Carrouso Project}},
+	year = {2002},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=11123}}
+
+@inproceedings{Plogsties2003,
+	address = {Banff},
+	author = {Jan Plogsties AND Oliver Baum AND Bernhard Grill},
+	booktitle = {24th Intl. Audio Eng. Soc. Conf., Banff, Paper 10},
+	number = {\#10},
+	title = {{Conveying Spatial Sound Using MPEG-4}},
+	year = {2003},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=12305}}
+
+@inproceedings{Brandenburg2004,
+	address = {Vienna},
+	author = {Karlheinz Brandenburg AND Sandra Brix AND Thomas Sporer},
+	booktitle = {12th EUSIPCO, Vienna},
+	pages = {1369-1376},
+	title = {{Wave Field Synthesis: From research to applications}},
+	year = {2004},
+	url = {https://ieeexplore.ieee.org/document/7080215}}
+
+@book{Blauert1997_book,
+	author = {Jens Blauert},
+	publisher = {MIT Press},
+	title = {{Spatial Hearing}},
+	year = {1997},
+	doi = {https://doi.org/10.7551/mitpress/6391.001.0001},
+	url = {https://doi.org/10.7551/mitpress/6391.001.0001}}
+
+@book{Vries2009_Mono,
+	address = {New York},
+	author = {Diemer de~Vries},
+	publisher = {Audio Eng. Soc.},
+	title = {{Wave Field Synthesis--AES Monograph}},
+	year = {2009}}
+
+@inbook{Sporer2018_book,
+	address = {New York},
+	author = {Thomas Sporer AND Karlheinz Brandenburg AND Sandra Brix AND Christoph Sladeczek},
+	chapter = {10: Wave Field Synthesis},
+	editor = {Agnieszka Roginski AND Paul Geluso},
+	publisher = {Routledge},
+	title = {{Immersive Sound}},
+	year = {2018}}
+
+@article{Ranjan2013_IEEE,
+	author = {Rishabh Ranjan AND Woon-Seng Gan},
+	journal = {IEEE Potentials},
+	number = {2},
+	pages = {17-23},
+	title = {{Wave Field Synthesis: The Future of Spatial Audio}},
+	volume = {32},
+	year = {2013},
+	doi = {https://doi.org/10.1109/MPOT.2012.2212051},
+	url = {https://doi.org/10.1109/MPOT.2012.2212051}}
+
+@article{Spors2013_IEEE,
+	author = {Sascha Spors AND Hagen Wierstorf AND Alexander Raake AND Frank Melchior AND Matthias Frank AND Franz Zotter},
+	journal = {Proc. IEEE},
+	number = {9},
+	pages = {1920-1938},
+	title = {{Spatial Sound With Loudspeakers and Its Perception: A Review of the Current State}},
+	volume = {101},
+	year = {2013},
+	doi = {https://doi.org/10.1109/JPROC.2013.2264784},
+	url = {https://doi.org/10.1109/JPROC.2013.2264784}}
+
+@article{Snow1953,
+	author = {W. B. Snow},
+	journal = {J. SMPTE [reprinted as IRE Trans. Audio, 3(2):42-53, 1955]},
+	number = {5},
+	pages = {567-589},
+	title = {{Basic Principles of Stereophonic Sound}},
+	volume = {61},
+	year = {1953},
+	doi = {https://doi.org/10.5594/J00963},
+	url = {https://doi.org/10.5594/J00963}}
+
+@article{Steinberg1934,
+	author = {J. C. Steinberg AND W. B. Snow},
+	journal = {Trans. Am. Inst. Electr. Eng. [also as Physical Factors in Bell Sys. Tech. J., 13(2), 245--258, 1934]},
+	number = {1},
+	pages = {12-17},
+	title = {{Auditory Perspective--Physical Factors}},
+	volume = {53},
+	year = {1934},
+	doi = {https://doi.org/10.1109/T-AIEE.1934.5056476},
+	url = {https://doi.org/10.1109/T-AIEE.1934.5056476}}
+
+@inproceedings{Vries2019,
+	address = {Rostock},
+	author = {Diemer de~Vries},
+	booktitle = {Fortschritte der Akustik---45. DAGA, Rostock},
+	pages = {1-7},
+	title = {{Vom Helmholtz-Integral zur Helmholtz-Medaille}},
+	year = {2019},
+	url = {https://pub.dega-akustik.de/DAGA_2019/data/articles/000439.pdf}}
+
+@article{Berkhout1988_JAES,
+	author = {A. J. Berkhout},
+	journal = {J. Audio Eng. Soc.},
+	number = {12},
+	pages = {977-995},
+	title = {{A Holographic Approach to Acoustic Control}},
+	volume = {36},
+	year = {1988},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=5117}}
+
+@article{Berkhout1993_JASA,
+	author = {A. J. Berkhout and D. de~Vries and P. Vogel},
+	journal = {J. Acoust. Soc. Am.},
+	number = {5},
+	pages = {2764-2778},
+	title = {{Acoustic control by wave field synthesis}},
+	volume = {93},
+	year = {1993},
+	doi = {https://doi.org/10.1121/1.405852},
+	url = {https://doi.org/10.1121/1.405852}}
+
+@article{Boone1995_JAES,
+	author = {Marinus M. Boone AND Edwin N. G. Verheijen AND Peter F. van Tol},
+	journal = {J. Audio Eng. Soc.},
+	number = {12},
+	pages = {1003-1012},
+	title = {{Spatial Sound-Field Reproduction by Wave-Field Synthesis}},
+	volume = {43},
+	year = {1995},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=7920}}
+
+@article{Vries1996_JAES,
+	author = {Diemer de~Vries},
+	journal = {J. Audio Eng. Soc.},
+	number = {12},
+	pages = {1120-1131},
+	title = {{Sound Reinforcement by Wavefield Synthesis: Adaptation of the Synthesis Operator to the Loudspeaker Directivity Characteristics}},
+	volume = {44},
+	year = {1996},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=7872}}
+
+@phdthesis{Start1997_diss,
+	author = {Evert Walter Start},
+	school = {Delft University of Technology},
+	title = {{Direct Sound Enhancement by Wave Field Synthesis}},
+	url = {http://resolver.tudelft.nl/uuid:c80d5b58-67d3-4d84-9e73-390cd30bde0d},
+	year = {1997}}
+
+@phdthesis{Verheijen1997_diss,
+	author = {Edwin Verheijen},
+	school = {Delft University of Technology},
+	title = {{Sound Reproduction by Wave Field Synthesis}},
+	url = {http://resolver.tudelft.nl/uuid:9a35b281-f19d-4f08-bec7-64f6920a3821},
+	year = {1997}}
+
+@phdthesis{Sonke2000_diss,
+	author = {Jan-Jakob Sonke},
+	school = {Delft University of Technology},
+	title = {{Variable Acoustics by Wave Field Synthesis}},
+	url = {http://resolver.tudelft.nl/uuid:2039d23c-4da3-4021-9fb1-2c21b4cf7275},
+	year = {2000}}
+
+@inproceedings{Brix2001,
+	address = {Amsterdam},
+	author = {Sandra Brix AND Thomas Sporer AND Jan Plogsties},
+	booktitle = {110th Audio Eng. Soc. Conv., Amsterdam, Paper 5314},
+	number = {\#5314},
+	title = {{CARROUSO---An European Approach to 3D-Audio}},
+	year = {2001},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=10014}}
+
+@inproceedings{Theile2003,
+	address = {Banff},
+	author = {G{\"u}nther Theile AND Helmut Wittek AND Markus Reisinger},
+	booktitle = {24th Intl. Audio Eng. Soc. Conf., Banff, Paper 35},
+	number = {\#35},
+	title = {{Potential Wavefield Synthesis Applications in the Multichannel Stereophonic World}},
+	year = {2003},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=12280}}
+
+@inproceedings{Kuhn2003,
+	address = {New York},
+	author = {Clemens Kuhn AND Renato Pellegrini AND Dieter Leckschat AND Etienne Corteel},
+	booktitle = {115th Audio Eng. Soc. Conv., New York, Paper 5929},
+	number = {\#5929},
+	title = {{An Approach to Miking and Mixing of Music Ensembles Using Wave Field Synthesis}},
+	year = {2003},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=12469}}
+
+@article{Wittek2007_JAES,
+	author = {Helmut Wittek AND Francis Rumsey AND G{\"u}nther Theile},
+	journal = {J. Audio Eng. Soc.},
+	number = {9},
+	pages = {723-751},
+	title = {{Perceptual Enhancement of Wavefield Synthesis by Stereophonic Means}},
+	volume = {55},
+	year = {2007},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14192}}
+
+@phdthesis{Wittek2007_diss,
+	author = {Helmut Wittek},
+	school = {University of Surrey},
+	title = {{Perceptual differences between wavefield synthesis and stereophony}},
+	url = {http://epubs.surrey.ac.uk/id/eprint/856932},
+	year = {2007}}
+
+@inproceedings{Apel2004,
+	address = {Berlin},
+	author = {Andreas Apel AND Thomas R{\"o}der AND Sandra Brix},
+	booktitle = {116th Audio Eng. Soc. Conv., Berlin, Paper 6121},
+	number = {\#6121},
+	title = {{Equalization of Wave Field Synthesis Systems}},
+	year = {2004},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=12788}}
+
+@inproceedings{Melchior2008,
+	address = {Amsterdam},
+	author = {Frank Melchior AND Christoph Sladeczek AND Diemer de~Vries AND Bernd Fr{\"o}hlich},
+	booktitle = {124th Audio Eng. Soc. Conv., Amsterdam, Paper 7376},
+	number = {\#7376},
+	title = {{User-Dependent Optimization of Wave Field Synthesis Reproduction for Directive Sound Fields}},
+	year = {2008},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14506}}
+
+@article{Corteel2006_JAES,
+	author = {Etienne Corteel},
+	journal = {J. Audio Eng. Soc.},
+	number = {12},
+	pages = {1140-1161},
+	title = {{Equalization in an Extended Area Using Multichannel Inversion and Wave Field Synthesis}},
+	volume = {54},
+	year = {2006},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=13892}}
+
+@article{Gauthier2007_JAES,
+	author = {Philippe-Aubert Gauthier AND Alain Berry},
+	journal = {J. Audio Eng. Soc.},
+	number = {12},
+	pages = {1107-1124},
+	title = {{Adaptive Wave Field Synthesis for Sound Field Reproduction: Theory, Experiments, and Future Perspectives}},
+	volume = {55},
+	year = {2007},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14185}}
+
+@inproceedings{Salvador2010,
+	address = {San Francisco},
+	author = {C{\'e}sar D. Salvador},
+	booktitle = {129th Audio Eng. Soc. Conv., San Francisco, Paper 8244},
+	number = {\#8244},
+	title = {{Discrete Driving Functions for Horizontal Reproduction using Wave Field Synthesis and Higher Order Ambisonics}},
+	year = {2010},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=15666}}
+
+@inproceedings{Franck2008,
+	address = {San Francisco},
+	author = {Andreas Franck AND Karlheinz Brandenburg AND Ulf Richter},
+	booktitle = {125th Audio Eng. Soc. Conv., San Francisco, Paper 7613},
+	number = {\#7613},
+	title = {{Efficient Delay Interpolation for Wave Field Synthesis}},
+	year = {2008},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14764}}
+
+@inproceedings{Melchior2003,
+	address = {New York},
+	author = {Frank Melchior AND Thomas R{\"o}der AND Sandra Brix AND Stefan Wabnik AND Christian Riegel},
+	booktitle = {115th Audio Eng. Soc. Conv., New York, Paper 5972},
+	number = {\#5972},
+	title = {{Authoring System for Wave Field Synthesis Content Production}},
+	year = {2003},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=12461}}
+
+@inproceedings{Vaananen2003,
+	address = {Amsterdam},
+	author = {Riitta V{\"a}{\"a}n{\"a}nen},
+	booktitle = {114th Audio Eng. Soc. Conv., Amsterdam, Paper 5764},
+	number = {\#5764},
+	title = {{User Interaction and Authoring of 3D Sound Scenes in the Carrouso EU project}},
+	year = {2003},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=12483}}
+
+@inproceedings{Pellegrini2004,
+	address = {Berlin},
+	author = {Renato Pellegrini AND Clemens Kuhn},
+	booktitle = {116th Audio Eng. Soc. Conv., Berlin, Paper 6117},
+	number = {\#6117},
+	title = {{Wave Field Synthesis: Mixing and Mastering Tools for Digital Audio Workstations}},
+	year = {2004},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=12695}}
+
+@inproceedings{Sporer2004a,
+	address = {Naples},
+	author = {Thomas Sporer},
+	booktitle = {7th Intl. Conf. on Digital Audio Effects (DAFx), Naples},
+	pages = {133-138},
+	title = {{Wave Field Synthesis--Generation and Reproduction of Natural Sound Environments}},
+	year = {2004},
+	url = {https://www.dafx.de/paper-archive/2004/P_133.PDF}}
+
+@inproceedings{Nicol1999,
+	address = {Rovaniemi},
+	author = {Rozenn Nicol AND Marc Emerit},
+	booktitle = {16th Intl. Audio Eng. Soc. Conf., Rovaniemi, Paper 16-039},
+	number = {\#16-039},
+	title = {{3D-Sound Reproduction Over an Extensive Listening Area: A Hybrid Method Derived from Holophony and Ambisonic}},
+	year = {1999},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=8015s}}
+
+@inproceedings{Daniel2003,
+	address = {Amsterdam},
+	author = {J. Daniel AND R. Nicol AND S. Moreau},
+	booktitle = {114th Audio Eng. Soc. Conv., Amsterdam, Paper 5788},
+	number = {\#5788},
+	title = {{Further Investigations of High Order Ambisonics and Wavefield Synthesis for Holophonic Sound Imaging}},
+	year = {2003},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=12567}}
+
+@inproceedings{Spors2008b,
+	address = {San Francisco},
+	author = {Sascha Spors AND Jens Ahrens},
+	booktitle = {125th Audio Eng. Soc. Conv., San Francisco, Paper 7556},
+	number = {\#7556},
+	title = {{A comparison of Wave Field Synthesis and Higher-Order Ambisonics with respect to physical properties and spatial sampling}},
+	year = {2008},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14708}}
+
+@article{Ahrens2010_IEEE,
+	author = {Jens Ahrens AND Sascha Spors},
+	journal = {IEEE Trans. Audio Speech Language Process.},
+	number = {8},
+	pages = {2038-2050},
+	title = {{Sound Field Reproduction Using Planar and Linear Arrays of Loudspeakers}},
+	volume = {18},
+	year = {2010},
+	doi = {https://doi.org/10.1109/TASL.2010.2041106},
+	url = {https://doi.org/10.1109/TASL.2010.2041106}}
+
+@phdthesis{Fazi2010,
+	author = {Filippo Maria Fazi},
+	school = {University of Southampton},
+	title = {Sound Field Reproduction},
+	url = {https://eprints.soton.ac.uk/id/eprint/158639},
+	year = {2010}}
+
+@inproceedings{Spors2010a,
+	address = {London},
+	author = {Sascha Spors AND Jens Ahrens},
+	booktitle = {128th Audio Eng. Soc. Conv., London, Paper 8121},
+	number = {\#8121},
+	title = {{Analysis and Improvement of Pre-Equalization in 2.5-Dimensional Wave Field Synthesis}},
+	year = {2010},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=15418}}
+
+@inproceedings{Voelk2012,
+	address = {San Francisco},
+	author = {Florian V{\"o}lk AND Hugo Fastl},
+	booktitle = {133rd Audio Eng. Soc. Conv., San Francisco, Paper 8717},
+	number = {\#8717},
+	title = {{Wave Field Synthesis with Primary Source Correction: Theory, Simulation Results, and Comparison to Earlier Approaches}},
+	year = {2012},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=16459}}
+
+@article{Rohr2013_JAES,
+	author = {Lukas Rohr AND Etienne Corteel AND Khoa-Van Nguyen AND Herv{\'e} Lissek},
+	journal = {J. Audio Eng. Soc.},
+	number = {12},
+	pages = {1001-1014},
+	title = {{Vertical Localization Performance in a Practical 3-D WFS Formulation}},
+	volume = {61},
+	year = {2013},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=17077}}
+
+@phdthesis{Wierstorf2014_diss,
+	author = {Hagen Wierstorf},
+	school = {TU Berlin},
+	title = {{Perceptual assessment of sound field synthesis}},
+	url = {https://d-nb.info/1067388109/34},
+	year = {2014}}
+
+@phdthesis{Winter2019_diss,
+	author = {Fiete Winter},
+	school = {University of RostockRostock},
+	title = {{Local Sound Field Synthesis}},
+	doi = {https://doi.org/10.18453/rosdok_id00002568},
+	url = {https://doi.org/10.18453/rosdok_id00002568},
+	year = {2019}}
+
+@phdthesis{Firtha2019_diss,
+	author = {Gergely Firtha},
+	school = {Budapest University of Technology and Economics},
+	title = {{A Generalized Wave Field Synthesis Framework with Application for Moving Virtual Sources}},
+	url = {https://hdl.handle.net/10890/13177},
+	year = {2019}}
+
+@phdthesis{Erbes2020_diss,
+	author = {Vera Erbes},
+	school = {University of Rostock},
+	title = {{Wave Field Synthesis in a Listening Room}},
+	doi = {https://doi.org/10.18453/rosdok_id00002763},
+	url = {https://doi.org/10.18453/rosdok_id00002763},
+	year = {2020}}
+
+@phdthesis{Hulsebos2004_diss,
+	author = {Edo Hulsebos},
+	school = {Delft University of Technology},
+	title = {{Auralization using Wave Field Synthesis}},
+	url = {http://resolver.tudelft.nl/uuid:49fbf99c-4983-4db0-bedb-b4e142e94333},
+	year = {2004}}
+
+@article{Vries2007_JASP,
+	author = {Diemer de~Vries AND Lars H{\"o}rchens AND Peter Grond},
+	journal = {J. Adv. Sig. Proc.},
+	title = {{Extraction of 3D Information from Circular Array Measurements for Auralization with Wave Field Synthesis}},
+	year = {2007},
+	doi = {https://doi.org/10.1155/2007/13416},
+	url = {https://doi.org/10.1155/2007/13416}}
+
+@article{Corteel2007_JASP,
+	author = {Etienne Corteel},
+	journal = {J. Adv. Sig. Proc.},
+	title = {{Synthesis of Directional Sources Using Wave Field Synthesis, Possibilities, and Limitations}},
+	year = {2007},
+	doi = {https://doi.org/10.1155/2007/90509},
+	url = {https://doi.org/10.1155/2007/90509}}
+
+@phdthesis{Baalman2008_diss,
+	author = {Marije A.J. Baalman},
+	school = {TU Berlin},
+	title = {{On wave field synthesis and electro-acoustic music, with a particular focus on the reproduction of arbitrarily shaped sound sources}},
+	doi = {https://dx.doi.org/10.14279/depositonce-1883},
+	url = {https://dx.doi.org/10.14279/depositonce-1883},
+	year = {2008}}
+
+@inproceedings{Franck2012,
+	address = {Helsinki},
+	author = {Andreas Franck AND Michael Rath AND Christoph Sladeczek AND Sandra Brix},
+	booktitle = {45th Intl. Audio Eng. Soc. Conf., Helsinki, Paper 4-6},
+	number = {\#4-6},
+	title = {{Efficient Rendering of Directional Sound Sources in Wave Field Synthesis}},
+	year = {2012},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=16199}}
+
+@article{Romoli2015_ApplAc,
+	author = {L. Romoli AND S. Cecchi AND P. Peretti AND F. Piazza},
+	journal = {Appl. Acoust.},
+	pages = {121-132},
+	title = {{Real-time implementation and performance evaluation of digital control for loudspeakers line arrays}},
+	volume = {97},
+	year = {2015},
+	doi = {https://doi.org/10.1016/j.apacoust.2015.04.002},
+	url = {https://doi.org/10.1016/j.apacoust.2015.04.002}}
+
+@inproceedings{Berkhout1992b,
+	address = {San Francisco},
+	author = {A. J. Berkhout AND Diemer de~Vries AND P. Vogel},
+	booktitle = {93rd Audio Eng. Soc. Conv., San Francisco, Paper 3379},
+	number = {\#3379},
+	title = {{Wave Front Synthesis: A New Direction in Electroacoustics}},
+	year = {1992},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=6754}}
+
+@inproceedings{Berkhout1992a,
+	address = {Vienna},
+	author = {A. J. Berkhout and P. Vogel and D. de~Vries},
+	booktitle = {92nd Audio Eng. Soc. Conv., Vienna, Paper 3299},
+	number = {\#3299},
+	title = {{Use of Wave Field Synthesis for Natural Reinforced Sound}},
+	year = {1992},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=6834}}
+
+@article{Gauthier2007_Acta,
+	author = {Philippe-Aubert Gauthier AND Alain Berry},
+	journal = {Acta Acust. United Acust.},
+	number = {5},
+	pages = {824-836},
+	title = {{Objective Evaluation of Room Effects on Wave Field Synthesis}},
+	volume = {93},
+	year = {2007}}
+
+@phdthesis{Schultz2016_diss,
+	author = {Frank Schultz},
+	school = {University of Rostock},
+	title = {{Sound Field Synthesis for Line Source Array Applications in Large-Scale Sound Reinforcement}},
+	doi = {https://doi.org/10.18453/rosdok_id00001765},
+	url = {https://doi.org/10.18453/rosdok_id00001765},
+	year = {2016}}
+
+@techreport{ZotterSchultz2020_White,
+	author = {Franz Zotter AND Frank Schultz AND Lukas G{\"o}lles},
+	institution = {University of Music and Performing Arts Graz / University of Rostock},
+	title = {{WFS Basics--Short and Complete}},
+	url = {https://git.iem.at/zotter/wfs-basics},
+	year = {2020}}
+
+@article{Ise1999,
+	author = {S. Ise},
+	journal = {Acta Acust. United Acust.},
+	number = {1},
+	pages = {78-87},
+	title = {{A Principle of Sound Field Control Based on the Kirchhoff-Helmholtz Integral Equation and the Theory of Inverse Systems}},
+	volume = {85},
+	year = {1999}}
+
+@article{Bai2015_JASA,
+	author = {Mingsian R. Bai AND Yi-Hsin Hua AND Chia-Hao Kuo AND Yu-Hao Hsieh},
+	journal = {J. Acoust. Soc. Am.},
+	number = {3},
+	pages = {1366-1376},
+	title = {{An integrated analysis-synthesis array system for spatial sound fields}},
+	volume = {137},
+	year = {2015},
+	doi = {https://doi.org/10.1121/1.4913277},
+	url = {https://doi.org/10.1121/1.4913277}}
+
+@article{Koyama2020_IEEE,
+	author = {Shoichi Koyama AND Gilles Chardon AND Laurent Daudet},
+	journal = {IEEE/ACM Trans. Audio Speech Language Process.},
+	pages = {696-714},
+	title = {{Optimizing Source and Sensor Placement for Sound Field Control: An Overview}},
+	volume = {28},
+	year = {2020},
+	doi = {https://doi.org/10.1109/TASLP.2020.2964958},
+	url = {https://doi.org/10.1109/TASLP.2020.2964958}}
+
+@article{Ahrens2008_Acta,
+	author = {Jens Ahrens AND Sascha Spors},
+	journal = {Acta Acust. United Acust.},
+	number = {6},
+	pages = {988-999},
+	title = {{An analytical approach to sound field reproduction using circular and spherical loudspeaker distributions}},
+	volume = {94},
+	year = {2008},
+	doi = {https://doi.org/10.3813/AAA.918115},
+	url = {https://doi.org/10.3813/AAA.918115}}
+
+@inproceedings{Spors2008a,
+	address = {Amsterdam},
+	author = {Sascha Spors AND Rudolf Rabenstein AND Jens Ahrens},
+	booktitle = {124th Audio Eng. Soc. Conv., Amsterdam, Paper 7358},
+	number = {\#7358},
+	title = {{The Theory of Wave Field Synthesis Revisited}},
+	year = {2008},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14488}}
+
+@inproceedings{Winter2019dagaposter,
+	author = {Fiete Winter AND Hagen Wierstorf AND Matthias Geier AND Nara Hahn AND Frank Schultz AND Sascha Spors},
+	booktitle = {Fortschritte der Akustik---45. DAGA, Rostock},
+	doi = {10.5281/zenodo.2633830},
+	url = {10.5281/zenodo.2633830},
+	title = {{Open Source Sound Field Synthesis Toolbox}},
+	year = {2019}}
+
+@inproceedings{Hahn2019,
+	address = {Aachen},
+	author = {Nara Hahn AND Fiete Winter AND Sascha Spors},
+	booktitle = {23rd Intl. Congr. on Acoustics (ICA), Aachen},
+	pages = {1132-1139},
+	title = {{2.5D Local wave field synthesis of a virtual plane wave using a time domain representation of spherical harmonics expansion}},
+	year = {2019},
+	url = {https://pub.dega-akustik.de/ICA2019/data/articles/001440.pdf}}
+
+@article{Pueo2010_JAES,
+	author = {B. Pueo And J. J. L{\'o}pez AND J. Escolano AND L. H{\"o}rchens},
+	journal = {J. Audio Eng. Soc.},
+	number = {12},
+	pages = {1045-1063},
+	title = {{Multiactuator Panels for Wave Field Synthesis: Evolution and Present Developments}},
+	volume = {58},
+	year = {2010},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=15745}}
+
+@article{Reussner2013_JAES,
+	author = {Thomas Reussner AND Christoph Sladeczek AND Michael Rath AND Sandra Brix AND Karl Preidl AND Hermann Scheck},
+	journal = {J. Audio Eng. Soc.},
+	number = {4},
+	pages = {235-245},
+	title = {{Audio Network-Based Massive Multichannel Loudspeaker System for Flexible Use in Spatial Audio Research}},
+	volume = {61},
+	year = {2013},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=16708}}
+
+@inproceedings{Caulkins2006,
+	address = {Paris},
+	author = {Terence Caulkins AND Olivier Warusfel},
+	booktitle = {120th Audio Eng. Soc. Conv., Paris, Paper 6712},
+	number = {\#6712},
+	title = {Characterization of the Reverberant Sound Field Emitted by a Wave Field Synthesis Driven Loudspeaker Array},
+	year = {2006},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=13516}}
+
+@book{Skudrzyk1971,
+	author = {Eugen Skudrzyk},
+	publisher = {Springer},
+	title = {{The Foundations of Acoustics}},
+	year = {1971},
+	doi = {https://doi.org/10.1007/978-3-7091-8255-0},
+	url = {https://doi.org/10.1007/978-3-7091-8255-0}}
+
+@inproceedings{Zotter2013,
+	address = {Guildford},
+	author = {Franz Zotter AND Sascha Spors},
+	booktitle = {52nd Intl. Audio Eng. Soc. Conf., Guildford, Paper 1-3},
+	number = {\#1-3},
+	title = {{Is sound field control determined at all frequencies? {H}ow is it related to numerical acoustics?}},
+	year = {2013},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=16921}}
+
+@article{Gauthier2006_JASA,
+	author = {Philippe-Aubert Gauthier AND Alain Berry},
+	journal = {J. Acoust. Soc. Am.},
+	number = {5},
+	pages = {2721-2737},
+	title = {{Adaptive wave field synthesis with independent radiation mode control for active sound field reproduction: Theory}},
+	volume = {119},
+	year = {2006},
+	doi = {https://doi.org/10.1121/1.2186514},
+	url = {https://doi.org/10.1121/1.2186514}}
+
+@phdthesis{Vogel1993_diss,
+	author = {Peter Vogel},
+	school = {Delft University of Technology},
+	title = {{Application of Wave Field Synthesis in Room Acoustics}},
+	url = {http://resolver.tudelft.nl/uuid:4d236099-096e-444c-bf40-b7b163076bf6},
+	year = {1993}}
+
+@article{Stenzel1927,
+	author = {H. Stenzel},
+	journal = {Elektrische Nachrichtentechnik},
+	number = {6},
+	pages = {239-253},
+	title = {{{\"U}ber die Richtwirkung von Schallstrahlern}},
+	volume = {4},
+	year = {1927}}
+
+@inproceedings{Spors2007b,
+	address = {New York},
+	author = {Sascha Spors},
+	booktitle = {123rd Audio Eng. Soc. Conv., New York, Paper 7299},
+	number = {\#7299},
+	title = {{Extension of an Analytic Secondary Source Selection Criterion for Wave Field Synthesis}},
+	year = {2007},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14356}}
+
+@article{Belloch2016_IEEE,
+	author = {Jose A. Belloch AND Alberto Gonzalez AND Enrique S. Quintana-Orti AND Miguel Ferrer AND Vesa V{\"a}lim{\"a}ki},
+	journal = {IEEE Trans. Audio Speech Language Process.},
+	number = {2},
+	pages = {435-447},
+	title = {{GPU-Based Dynamic Wave Field Synthesis Using Fractional Delay Filters and Room Compensation}},
+	volume = {25},
+	year = {2016},
+	doi = {https://doi.org/10.1109/TASLP.2016.2631338},
+	url = {https://doi.org/10.1109/TASLP.2016.2631338}}
+
+@inproceedings{Kolundzija2009a,
+	address = {Munich},
+	author = {Mihailo Kolund\v{z}ija AND Christof Faller AND Martin Vetterli},
+	booktitle = {126th Audio Eng. Soc. Conv., Munich, Paper 7754},
+	number = {\#7754},
+	title = {{Sound Field Reconstruction: An Improved Approach For Wave Field Synthesis}},
+	year = {2009},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14950}}
+
+@inproceedings{Kolundzija2009b,
+	address = {New York},
+	author = {Mihailo Kolund\v{z}ija AND Christof Faller AND Martin Vetterli},
+	booktitle = {127th Audio Eng. Soc. Conv., New York, Paper 7851},
+	number = {\#7851},
+	title = {{Designing Practical Filters For Sound Field Reconstruction}},
+	year = {2009},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=15046}}
+
+@inproceedings{Schultz2017,
+	address = {Berlin},
+	author = {Frank Schultz AND Gergely Firtha AND Peter Fiala AND Sascha Spors},
+	booktitle = {142nd Audio Eng. Soc. Conv., Berlin, Paper 9722},
+	number = {\#9722},
+	title = {{Wave Field Synthesis Driving Functions for Large-Scale Sound Reinforcement Using Line Source Arrays}},
+	year = {2017},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=18599}}
+
+@article{Ahrens2011,
+	author = {Jens Ahrens AND Sascha Spors},
+	journal = {J. Acoust. Soc. Am.},
+	number = {5},
+	pages = {2807-2816},
+	title = {{Wave field synthesis of moving virtual sound sources with complex radiation properties}},
+	volume = {130},
+	year = {2011},
+	doi = {https://doi.org/10.1121/1.3640850},
+	url = {https://doi.org/10.1121/1.3640850}}
+
+@inproceedings{Franck2007,
+	address = {Hiller{\o}d},
+	author = {Andreas Franck AND Andreas Gr{\"a}fe AND Thomas Korn AND Michael Strau{\ss}},
+	booktitle = {32nd Intl. Audio Eng. Soc. Conf., Hiller{\o}d, Paper 10},
+	number = {\#10},
+	title = {{Reproduction of Moving Sound Sources by Wave Field Synthesis: An Analysis of Artifacts}},
+	year = {2007},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=14206}}
+
+@inproceedings{Schultz2020a,
+	address = {Vienna},
+	author = {Frank Schultz AND Nara Hahn AND Sascha Spors},
+	booktitle = {148th Audio Eng. Soc. Conv., Virtual Vienna, Paper 10339},
+	number = {\#10339},
+	title = {{Shelving Filter Cascade with Adjustable Transition Slope and Bandwidth}},
+	year = {2020},
+	url = {https://www.aes.org/e-lib/browse.cfm?elib=20756}}
+
+@phdthesis{Koyama2013,
+	author = {Shoichi Koyama},
+	school = {University of Tokyo},
+	title = {{Boundary Integral Approach to Sound Field Transform and Reproduction}},
+	doi = {https://doi.org/10.15083/00007263},
+	url = {https://doi.org/10.15083/00007263},
+	year = {2013}}

@@ -1,0 +1,47 @@
+% wfs_chapter_hda
+% - git repository https://github.com/spatialaudio/wfs_chapter_hda
+% - drafts for the chapters (english, german) on **Wave Field Synthesis** for
+% Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
+% https://link.springer.com/referencework/10.1007/978-3-662-60357-4
+% - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
+% - source code under MIT license https://opensource.org/licenses/MIT
+% - Springer has copyright to the final english / german chapters and their layouts
+% - we might also find https://git.iem.at/zotter/wfs-basics useful
+% - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+
+% Authors:
+% - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+% - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+% - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+
+\typeout{Document Style `macro' <2021-05-07>.}
+
+% math commands:
+\newcommand\xp{\bm{x}_\mathrm{0}} % primäquelle position
+\newcommand\xs{\bm{x}} % sekundärquelle position
+\newcommand\xr{\bm{x}_\mathrm{r}} % receiver position
+\newcommand\nx{\bm{n}_{\xs}} %unit vec SSD
+\newcommand\nxT{\bm{n}^\mathrm{T}_{\xs}} %transposed unit nvec SSD
+\newcommand\vecorigin{\bm{0}} % zero vec
+\newcommand\wc{\frac{\omega}{c}} %w/c
+\newcommand\gain{\gamma} %variable for gain
+
+\newcommand\cc{CC BY 4.0 Frank Schultz, Nara Hahn}
+
+% we can use matplotlib colors:
+\definecolor{C0}{HTML}{1f77b4}
+\definecolor{C1}{HTML}{ff7f0e}
+\definecolor{C2}{HTML}{2ca02c}
+\definecolor{C3}{HTML}{d62728}
+\definecolor{C7}{HTML}{7f7f7f}
+
+% text commands:
+\newcommand{\fscom}[2][C1]{\textcolor{#1}{#2}} %Schultz Kommentarfarbe
+\newcommand{\redcol}[2][C3]{\textcolor{#1}{#2}}
+\newcommand{\Abb}{Abb.~}
+\newcommand{\Abbildung}{Abbildung~}
+\newcommand{\Kap}[1]{{Abschn.~\ref{#1}}}
+\newcommand{\Kapitel}[1]{{Abschnitt~\ref{#1}}}
+\newcommand{\Glg}{Glg.~}
+\newcommand{\Gleichung}{Gleichung~}
+\newcommand{\Glgn}{Glgn.~}

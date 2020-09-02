@@ -1,0 +1,27 @@
+% wfs_chapter_hda
+% - git repository https://github.com/spatialaudio/wfs_chapter_hda
+% - drafts for the chapters (english, german) on **Wave Field Synthesis** for
+% Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
+% https://link.springer.com/referencework/10.1007/978-3-662-60357-4
+% - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
+% - source code under MIT license https://opensource.org/licenses/MIT
+% - Springer has copyright to the final english / german chapters and their layouts
+% - we might also find https://git.iem.at/zotter/wfs-basics useful
+% - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+
+% Authors:
+% - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+% - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+% - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+
+\typeout{Document Style `macro_tikz' <2021-05-07>.}
+
+% tikz stuff
+%https://tex.stackexchange.com/questions/25342/how-to-draw-orthogonal-vectors-using-tikz
+\newcommand{\tikzAngleOfLine}{\tikz@AngleOfLine}
+\def\tikz@AngleOfLine(#1)(#2)#3{%
+  \pgfmathanglebetweenpoints{%
+    \pgfpointanchor{#1}{center}}{%
+    \pgfpointanchor{#2}{center}}
+  \pgfmathsetmacro{#3}{\pgfmathresult}%
+}

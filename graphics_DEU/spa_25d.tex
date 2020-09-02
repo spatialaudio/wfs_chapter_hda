@@ -1,0 +1,128 @@
+% wfs_chapter_hda
+% - git repository https://github.com/spatialaudio/wfs_chapter_hda
+% - drafts for the chapters (english, german) on **Wave Field Synthesis** for
+% Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
+% https://link.springer.com/referencework/10.1007/978-3-662-60357-4
+% - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
+% - source code under MIT license https://opensource.org/licenses/MIT
+% - Springer has copyright to the final english / german chapters and their layouts
+% - we might also find https://git.iem.at/zotter/wfs-basics useful
+% - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+
+% Authors:
+% - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+% - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+% - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+%
+\documentclass[crop,tikz]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+
+\usepackage{amsmath}
+\usepackage{trfsigns}
+\usepackage{bm}
+
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes,snakes,calc,arrows,through,intersections,backgrounds}
+
+\usepackage{../macro_DEU}
+\usepackage{../macro_tikz}
+
+\begin{document}
+% inspired by
+% https://tex.stackexchange.com/questions/50559/intersection-of-straight-line-and-circle
+\begin{tikzpicture}[scale=1] %,show background rectangle]
+
+\tikzset{mark coordinate/.style={inner sep=0pt,
+                                   outer sep=0pt,
+                                   minimum size=3pt,
+                                   fill=#1,
+                                   circle}
+                                   }
+\begin{scope}
+
+\clip (-5.25cm,-2.1cm) rectangle ++(8.5cm, 4.75cm);  % Springer requires 85mm width
+
+% coordinates:
+\draw[thick] (-1,0) coordinate (tmp);
+\draw[thick] (0,0) coordinate (origin);
+\draw[thick] (2,0) coordinate (radius);
+\draw[thick] (-4,1) coordinate [mark coordinate=black, label=left:{$\bm x_0$}] (x0);
+\draw[thick] (0.0,0.5) coordinate [mark coordinate=black] (xr1);
+\draw[thick] (-0.5,-0.25) coordinate [mark coordinate=black] (xr2);
+\coordinate (xr_top) at (0.0,1);
+\coordinate (xr_mid) at (-0.1,0.2);
+\coordinate (xr_bottom) at (-0.66,-0.75);
+%
+% SSD circle:
+\node[name path=FullSSDCircle, draw, thin, dash dot, color=C7, circle through=(radius)] (FullSSDCircleNode) at (origin) {};
+%
+% define and mark tangent points for active SSD:
+\draw[thick] (tangent cs:node=FullSSDCircleNode,point={(x0)},solution=1)
+coordinate (SSDactive1);
+\draw[thick] (tangent cs:node=FullSSDCircleNode,point={(x0)},solution=2)
+coordinate (SSDactive2);
+%
+% draw tangents for active SSD:
+\draw[C7, dashed] (x0) -- (SSDactive1);
+\draw[C7, dashed] (x0) -- (SSDactive2);
+%
+% draw tangent point to origin:
+\draw[C7, dashed] (origin) -- (SSDactive1);
+\draw[C7, dashed] (origin) -- (SSDactive2);
+%
+%clip circle to get active SSD part
+\begin{scope}
+\clip (x0) circle(3.6);  % HARD CODED RADIUS!!!
+\node[draw, ultra thick, color=C7, circle through=(radius)] at (origin) {};
+\end{scope}
+%
+% get SSD's stationary points:
+\path[name path=x0xr1] (x0) -- (xr1);
+\path [name intersections={of=x0xr1 and FullSSDCircle, name=i}] (i-1) coordinate [mark coordinate=C0];
+\path[name path=x0xr2] (x0) -- (xr2);
+\path [name intersections={of=x0xr2 and FullSSDCircle, name=j}] (j-1) coordinate [mark coordinate=C1];
+\path[name path=x0origin] (x0) -- (origin);
+\path [name intersections={of=x0origin and FullSSDCircle, name=k}] (k-1) coordinate;
+%
+% wave pattern
+\draw[snake=expanding waves, segment angle=30, segment length=6, color=C7!33] (x0)  -- (k-1);
+\draw[snake=expanding waves, segment angle=60, segment length=6, color=C0!33] (i-1)  -- (xr1);
+\draw[snake=expanding waves, segment angle=65, segment length=6, color=C1!33] (j-1)  -- (xr2);
+%
+\draw[snake=expanding waves, segment angle=4, segment length=6, color=black] (x0)  -- (i-1);
+\draw[snake=expanding waves, segment angle=4, segment length=6, color=black] (x0)  -- (j-1);
+\draw[snake=expanding waves, segment angle=4, segment length=6, color=C0, thick] (i-1)  -- (xr1);
+\draw[snake=expanding waves, segment angle=4, segment length=6, color=C1, thick] (j-1)  -- (xr2);
+%
+%ref line path example:
+\draw[black, ultra thick] plot[smooth] coordinates{(xr_top) (xr1) (xr_mid) (xr2) (xr_bottom)};
+%
+% draw direct path between virtual source, SSD and receiver:
+\draw[->, >=stealth', thick, C0] (xr1) -- node[above]{$\hat{\bm x} - \bm x_{\mathrm{r}}$} (i-1);
+\draw[->, >=stealth', thick, black] (x0) --  node[above]{$\hat{\bm x} - \bm x_0$} (i-1);
+\draw[->, >=stealth', thick, C1] (xr2) -- (j-1);
+\draw[->, >=stealth', thick, black] (x0) -- (j-1);
+%
+\draw (i-1) node[above]{$\hat{\bm x}$};
+\draw (j-1) node[below left]{$\check{\bm x}$};
+%
+\draw (xr1) node[right]{$\bm x_\mathrm{r}(\hat{\bm x})$};
+\draw (xr2) node[right]{$\bm x_\mathrm{r}(\check{\bm x})$};
+%
+%Beschriftung
+\draw (xr_bottom) node[right]{Referenzkurve};
+\draw[C7] (SSDactive1) node[left]{aktive Monopole};
+\draw[C7] (SSDactive1) node[left, yshift=-0.3cm]{Apertur};
+%
+%Normalenvektor
+%https://tex.stackexchange.com/questions/25342/how-to-draw-orthogonal-vectors-using-tikz
+\tikzAngleOfLine(origin)(SSDactive2){\angle};
+\draw[->, >=stealth', thick, C7] (SSDactive2) -- ++(\angle:0.33) node[above]{$\bm n_{\bm x}$};
+
+\draw[C7] (SSDactive2) node[left, xshift=-0.1cm, yshift=0.05cm]{$\bm x$};
+
+\end{scope}
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,95 @@
+% wfs_chapter_hda
+% - git repository https://github.com/spatialaudio/wfs_chapter_hda
+% - drafts for the chapters (english, german) on **Wave Field Synthesis** for
+% Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
+% https://link.springer.com/referencework/10.1007/978-3-662-60357-4
+% - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
+% - source code under MIT license https://opensource.org/licenses/MIT
+% - Springer has copyright to the final english / german chapters and their layouts
+% - we might also find https://git.iem.at/zotter/wfs-basics useful
+% - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+
+% Authors:
+% - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+% - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+% - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+%
+\documentclass[crop,tikz]{standalone}
+
+\usepackage{amsmath}
+\usepackage{trfsigns}
+\usepackage{bm}
+
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes,snakes,calc,arrows,through,intersections,backgrounds}
+
+\usepackage{../macro_ENG}
+
+% \usepackage{tkz-euclide} ?
+
+\begin{document}
+\begin{tikzpicture}
+
+\draw [draw=white] (-6.25cm,-3.575cm) rectangle ++(8.5cm, 6cm);  % make sure that we have 85mm width
+
+% Hüllfläche
+\draw [black, fill=C0!10] plot [smooth cycle] coordinates {
+  (-2,0.25)
+  (-1.5,-2)
+  (1.5,0.25)
+  (0,2)
+  (-1.5,2)
+};
+
+%hard coded point source WFS arriving at S
+
+\draw [C7!50,dashed,domain=-15:50] plot ({-5+3.25*cos(\x)}, {-2+3.25*sin(\x)});
+\draw [C7!50,dashed,domain=-15:50] plot ({-5+3.5*cos(\x)}, {-2+3.5*sin(\x)});
+\draw [C7!50,dashed,domain=-15:50] plot ({-5+3.75*cos(\x)}, {-2+3.75*sin(\x)});
+\draw [C7!50,dashed,domain=-15:50] plot ({-5+4*cos(\x)}, {-2+4*sin(\x)});
+
+
+%hard coded point source WFS within V
+\draw [C7!100,domain=4.1:20] plot ({-5+3.25*cos(\x)}, {-2+3.25*sin(\x)});
+\draw [C7!85,domain=0:31] plot ({-5+3.5*cos(\x)}, {-2+3.5*sin(\x)});
+\draw [C7!70,domain=1:37] plot ({-5+3.75*cos(\x)}, {-2+3.75*sin(\x)});
+\draw [C7!55,domain=2.7:41] plot ({-5+4*cos(\x)}, {-2+4*sin(\x)});
+
+%virtual point source
+\draw[black!85] (-5,-2) circle(0.25);
+\draw[black!70] (-5,-2) circle(0.5);
+\draw[black!55] (-5,-2) circle(0.75);
+\draw[black!40] (-5,-2) circle(1);
+\fill (-5,-2) circle (0.1);
+
+% origin
+\draw (-3,-3) node[below]  {\textcolor{C7}{$\vecorigin$}};
+
+% Messpunkt
+\fill (-0.15,-0.5) circle (0.05);
+
+\draw (-2.15,0.2) -- (-2.15,0.35) -- (-1.995,0.35);  % right angle
+
+\draw[->,>=stealth',C0, thick] (-2,0.2) -- (-2.5,0.2) node[anchor=east] {\textcolor{black}{$\nx$}};
+
+\draw[->,>=stealth',C7, thin] (-3,-3) -- node[left=+5pt]{\textcolor{C7}{$\xr$}}(-0.15,-0.5);
+\draw[->,>=stealth',C7, thin] (-3,-3) -- node[left=-2pt]{\textcolor{C7}{$\xs$}}(-2,0.2);
+\draw[->,>=stealth',C7, thin] (-3,-3) -- node[near start, above]{\textcolor{C7}{$\xp$}}(-5,-2);
+
+
+\draw[->,>=stealth',C0, thick] (-0.15,-0.5) node[above]{\textcolor{black}{$p(\xr)$}} --
+node[above]{\textcolor{black}{$\xs\!-\!\xr$}} (-2,0.2);
+\draw[->,>=stealth',C0, thick] (-5,-2) -- node[left]{\textcolor{black}{$\xs\!-\!\xp$}}(-2,0.2);
+
+\draw (1,-0.85) node {$S, l_\text{2D}$};
+\draw (0.7,0.4) node {$V, \Omega_\text{2D}$};
+
+\draw[black!60, fill=white, thick] (-1.9,1.1) circle (0.1) node[scale=0.5, black]{$\mathbf{+}$};
+\draw (-1.75,1.1) node[right]{$\mathrm{monopole}$};
+
+\draw[black!60, fill=white, thick] (-2.06,0.79) circle (0.1) node[scale=0.5, black]{$\mathbf{+}$};
+\draw[black!60, fill=white, thick] (-1.85,0.75) circle (0.1) node[scale=0.5, black]{$\mathbf{-}$};
+\draw (-1.75,0.75) node[right]{$\mathrm{dipole}$};
+
+\end{tikzpicture}
+\end{document}
