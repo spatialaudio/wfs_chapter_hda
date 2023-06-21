@@ -511,7 +511,7 @@ als Sekundärquellen\index{Sekundärquelle} bezeichnet.
 Beim modellbasierten Wiedergabeansatz
 werden typischerweise einfache Quellenmodelle gewählt, einhergehend mit vergleichsweise
 geringer Schallfeldkomplexität, dafür aber mit einfacher Variationsmöglichkeit
-der Raum-Zeitparametrik des Quellenmodells.
+der Raum-Zeit-Parametrik des Quellenmodells.
 %
 Einfache virtuelle Quellenmodelle sind die
 Punktquelle \cite{Berkhout1993_JASA,Start1997_diss},
@@ -706,7 +706,7 @@ der gewählte Primär- und Sekundärquellentyp Monopol erzeugt hingegen ein
 drei-dimensionales Schallfeld.
 %
 Die Synthese mit \Glg\eqref{eq:MonopolIntegral_25D} liefert nun daher
-zwar ein 3D-Schallfeld, welches aber nur von zwei ortspezifischen
+zwar ein 3D-Schallfeld, welches aber nur von zwei ortsspezifischen
 Variablen abhängig ist und
 entsprechend nur in 2D kontrolliert bzw. parametrisiert werden kann.
 %
@@ -793,7 +793,7 @@ Das komplexe Gewicht $G(r_{\xr\text{-}\xp})$ beschreibt die Schallausbreitung
 einer Punktquelle
 bei $\xp$ zum Empfängerpunkt $\xr$ mit dem Abstand $r_{\xr\text{-}\xp} = \|\xr-\xp\|$, vgl.~\eqref{eq:G03D}.
 %
-Die Näherung beinhaltet also die gewünschte lokale Phase des zu synthesierenden
+Die Näherung beinhaltet also die gewünschte lokale Phase des zu synthetisierenden
 Schallfeldes am Empfängerpunkt.
 %
 Im 3D-Fall ist Amplitude und Phase inhärent korrekt und führt
@@ -921,6 +921,7 @@ was sich als Schallstrahlenmodell interpretieren lässt.
 %
 Da die Erzeugung des korrekten Schalldrucks für mehrere Empfängerpunkte im Fokus
 der WFS steht, also mehrere Schallstrahlen zur korrekten Wellenfrontkrümmung
+\index{Wellenfrontkrümmung}
 beitragen sollen, müssen die \Glgn\eqref{eq:pStat3D}, \eqref{eq:pStat25D},
 \eqref{eq:SecSrcSel} und
 \eqref{eq:KHIFarMono} sinnvoll verknüpft werden, damit für die Syntheseintegrale
@@ -1061,7 +1062,7 @@ Frequenzgängen.
 
 
 
-Die $\im\frac{\omega}{c}$-unabhängigen Terme in den Frequenzgängen
+Die $\im\frac{\omega}{c}$-unabhängigen Terme in den Filter-Frequenzgängen
 in den \Glgn\eqref{eq:Driving3D}, \eqref{eq:Driving25D}
 %
 \begin{align}
@@ -1169,7 +1170,7 @@ vgl. \cite{Berkhout1993_JASA,Boone1995_JAES,Start1997_diss,Spors2010a}.
 Die Simulationen beruhen auf dem obigen Formelapparat für 2.5D-WFS
 und können z.B. mit der Sound Field Synthesis
 Toolbox \cite{Winter2019dagaposter}\footnote{\url{https://github.com/sfstoolbox}}
-oder der Referenzimplementierung zu diesem
+und der Referenzimplementierung zu diesem
 Kapitel\footnote{\url{https://github.com/spatialaudio/wfs_chapter_hda}}
 nachvollzogen und durchgeführt werden.
 %
@@ -1579,7 +1580,7 @@ ist vor allem für kompliziertere Geometrien und damit einhergehend fehlender
 analytischer Lösungen ein akustisches Strahlenmodell\index{Schallstrahlenmodell}
 nützlich, vgl. \cite{Winter2019_diss}.
 %
-Dies kann vorteilhaft genutzt werden, um aliasingfreie Zonen über einen großen
+Dies kann vorteilhaft genutzt werden, um aliasing-freie Zonen über einen großen
 Frequenzbereich näherungsweise zu prädizieren ohne aufwändige Simulationen von
 Schallfeldern und Richtcharakteristiken durchführen zu müssen.
 
@@ -1827,7 +1828,7 @@ $f_\text{max} = \frac{c}{2 \Delta_{\xs}}\approx 437$\,Hz,
 oberhalb derer Aliasingartefakte im Frequenzgang zu erwarten sind.
 %
 Tatsächlich ist die Frequenz $f_\text{al}$ ab der Aliasing auftritt,
-vom Messpunkt und der Arraygeometrie abhängig, und
+vom Messpunkt und der Array-Geometrie abhängig, und
 kann $f_\text{al}>f_\text{max}$, aber niemals $f_\text{al}<f_\text{max}$ sein.
 %
 Dies lässt sich verknüpfen mit der obigen Beobachtung: das Schallfeld
@@ -1862,14 +1863,13 @@ sollten im perzeptiven Kontext relativiert werden.
 %
 Ein 2.5D-WFS System mit praktikablem $17$\,cm-Lautsprecherabstand
 wurde beispielsweise weniger klangverfärbend wahrgenommen als
-Off-Center Stereo-Wiedergabe; und bei Sprache führen dieses WFS-Setup und On-Center
+Off-Center Stereo-Wiedergabe; und bei Sprache führt dieses WFS-Setup und On-Center
 Stereo-Wiedergabe zur ungefähr gleich wahrgenommenen
 Klangverfärbung \cite{Wierstorf2014_diss}.
 %
 Für breitbandige Signale, die vergleichsweise viel räumliches Aliasing anregen,
 führen Raumreflexionen zur Glättung des Frequenzgangs, was verglichen mit dem
-Freifeldfall perzeptiv in gutmütiger \textit{decolouration} münden kann
- \cite{Erbes2020_diss}.
+Freifeldfall perzeptiv in weniger Klangverfärbung münden kann \cite{Erbes2020_diss}.
 
 
 
@@ -2037,7 +2037,7 @@ Um den Frequenzgang am Messpunkt tieffrequent auf $\approx 0$\,dB-Pegel zu
 kompensieren wurde die untere Grenzfrequenz $f_\text{u}=75$\,Hz
 gewählt.
 %
-Der Filterfrequenzgang weist im Frequenzbereich $f_\text{u} < f < f_\text{o}$
+Der Shelving-Filter-Frequenzgang weist im Frequenzbereich $f_\text{u} < f < f_\text{o}$
 die gewünschte $+3$\,dB/Oktave Flanke ähnlich des theoretischen WFS-Vorfilters auf,
 vgl.~\Abb\ref{fig:wfs25d_lineSSD_aliasing_eq_example}~(rechts).
 %
@@ -2100,8 +2100,8 @@ kreisförmige Lautsprecherarrays \cite{Winter2019_diss,Hahn2019,Hahn2022_JAES}.
 %
 Grundidee der lokalen Verfahren ist eine räumliche Bandbegrenzung der Ansteuerung,
 was lautsprecherindividuelle FIR-Filterung erfordert,
-die im Gegensatz zur \textit{secondary source selection} bei WFS alle
-Lautsprecher betrifft.
+die alle Lautsprecher betrifft, im Gegensatz zur \textit{secondary source selection}
+bei nicht-lokaler WFS.
 %
 \Abb\ref{fig:td_lwfs_center} und \ref{fig:td_lwfs_offcenter} zeigen Ergebnisse
 des lokalen WFS-Verfahrens nach \cite{Hahn2022_JAES} erneut mit dem Kreisarray aus
@@ -2228,7 +2228,7 @@ mit mutmaßlich proprietären WFS-Algorithmikerweiterungen.
 
 Sowohl die Benutzerfreundlichkeit,
 konsistente Produktionsarbeitsabläufe als auch planare Lautsprecherpanele,
-welche mittels Audionetzwerken angesteuert werden \cite{Reussner2013_JAES},
+welche mittels Audio-Netzwerken angesteuert werden \cite{Reussner2013_JAES},
 vgl. Holoplot, gewinnen an Bedeutung beim Einsatz von WFS für 3D-Beschallungsszenarien.
 %
 Stand frühe 2020er Jahre scheinen Ambisonics, kanal- und objektbasierter Surround Sound,
