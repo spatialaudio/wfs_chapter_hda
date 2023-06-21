@@ -63,10 +63,12 @@ cp -p python/lwfs25d_circSSD_time_domain_offcenter_py_DEU.png wfs_chapter_hda_re
 cd wfs_chapter_hda_release_DEU/latex/
 #
 rm wfs_manuscript_DEU.aux
-pdflatex -shell-escape Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU.tex
-bibtex Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU.aux
-pdflatex -shell-escape Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU.tex
-pdflatex -shell-escape Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU.tex
+pdflatex -shell-escape Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU
+bibtex Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU
+pdflatex -shell-escape Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU
+pdflatex -shell-escape Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU
+makeindex Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU
+pdflatex -shell-escape Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU
 #
 cd ..
 cd ..
