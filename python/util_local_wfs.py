@@ -30,7 +30,8 @@ from scipy.special import (eval_legendre as legendre, sph_harm,
                            eval_chebyt as chebyt, erf, comb, gamma, binom,
                            jv as besselj, spherical_jn as sphbesselj)
 from scipy.signal import fftconvolve as conv, freqz, lfilter, filtfilt,\
-                         butter, unit_impulse, remez, kaiser
+                         butter, unit_impulse, remez
+from scipy.signal.windows import kaiser
 from scipy.interpolate import interp1d
 from sfs.util import db
 

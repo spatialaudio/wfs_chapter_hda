@@ -18,7 +18,7 @@ import numpy as np
 import sfs
 import matplotlib.pyplot as plt
 import copy
-from matplotlib.cm import get_cmap
+from matplotlib.pyplot import get_cmap
 from scipy.signal import (fftconvolve as conv, freqz, firwin)
 from util_local_wfs import (log_frequency, f2w, wfs_25d_pw_sht,
                             RF_Design_Method, soundfield_ir)

@@ -17,7 +17,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import sfs  # implemented with version 0.6.2 for correct td.wfs.point25d()
-from matplotlib.cm import get_cmap
+from matplotlib.pyplot import get_cmap
 from scipy.signal import firwin
 from util import vec_ps2ss, set_rcparams, wfs_pre_filter_impulse_response
 from util import speed_of_sound

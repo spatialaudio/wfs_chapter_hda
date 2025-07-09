@@ -20,7 +20,7 @@ from numpy.lib.scimath import sqrt
 from scipy.special import erf
 
 from matplotlib import rcParams
-from matplotlib.cm import get_cmap
+from matplotlib.pyplot import get_cmap
 from matplotlib.colors import BoundaryNorm
 
 from util_shelving_cascade import shelving_filter_parameters

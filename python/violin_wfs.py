@@ -20,7 +20,7 @@ from util import speed_of_sound, wave_quantities
 from util import audience_plane, atf, synthesize
 from util import set_rcparams, set_figure_width_one_col
 # from util import set_cmap_lin, set_cmap_db, set_cmap_lin_err, set_cmap_db_err
-from matplotlib.cm import get_cmap
+from matplotlib.pyplot import get_cmap
 from matplotlib.colors import BoundaryNorm
 import sys
 

@@ -241,7 +241,7 @@ for cnt, (k, w) in enumerate(zip(kv, wv)):
     d, max_op = driving_function_no_prefilter(k, xx0_unit, n,
                                               xx0_length, xxr_length)
     _, ATF = atf(xr, x, k, w, t=0)
-    p_freq_resp[cnt] = ATF @ d * dx0
+    p_freq_resp[cnt] = np.squeeze(ATF @ d * dx0)
 # normalize to 0 dB level at ref curve:
 p_freq_resp *= 4*np.pi*np.linalg.norm(x0)
 
