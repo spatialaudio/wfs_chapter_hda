@@ -1,8 +1,8 @@
 # wfs_chapter_hda
 # - git repository https://github.com/spatialaudio/wfs_chapter_hda
 # - drafts for the chapters (english, german) on **Wave Field Synthesis** for
-# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
-# https://link.springer.com/referencework/10.1007/978-3-662-60357-4
+# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer, 2025
+# https://link.springer.com/book/10.1007/978-3-662-60369-7
 # - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
 # - source code under MIT license https://opensource.org/licenses/MIT
 # - Springer has copyright to the final english / german chapters and their layouts
@@ -153,4 +153,3 @@ ax[1, 1].plot(0, 0, 'o', ms=1.25, color='k')
 ax[1, 1].text(-0.15, 0.15, r'$\mathbf{x}$', color=col_vec)
 
 plt.savefig('monopole_dipole.png')
-

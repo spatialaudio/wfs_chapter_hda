@@ -1,8 +1,8 @@
 # wfs_chapter_hda
 # - git repository https://github.com/spatialaudio/wfs_chapter_hda
 # - drafts for the chapters (english, german) on **Wave Field Synthesis** for
-# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
-# https://link.springer.com/referencework/10.1007/978-3-662-60357-4
+# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer, 2025
+# https://link.springer.com/book/10.1007/978-3-662-60369-7
 # - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
 # - source code under MIT license https://opensource.org/licenses/MIT
 # - Springer has copyright to the final english / german chapters and their layouts
@@ -50,6 +50,6 @@ for i in range(2):
     ax[i].grid(True)
 
 
-fig.subplots_adjust(top=1.0, bottom=0, right=1.0, left=0, hspace=0, wspace=0) 
+fig.subplots_adjust(top=1.0, bottom=0, right=1.0, left=0, hspace=0, wspace=0)
 
 plt.savefig('wfs25d_lineSSD_polar_plot_overlay.png')
