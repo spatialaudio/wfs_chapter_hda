@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Schultz"
+  given-names: "Frank"
+  orcid: "https://orcid.org/0000-0002-3010-0294"
+- family-names: "Hahn"
+  given-names: "Nara"
+  orcid: "https://orcid.org/0000-0003-3564-5864"
+- family-names: "Spors"
+  given-names: "Sascha"
+  orcid: "https://orcid.org/0000-0001-7225-9992"
+title: "wfs_chapter_hda"
+version: 0.0
+doi: 10.5281/zenodo.8060879
+date-released: 2023-06-20
+url: "https://github.com/spatialaudio/wfs_chapter_hda"
