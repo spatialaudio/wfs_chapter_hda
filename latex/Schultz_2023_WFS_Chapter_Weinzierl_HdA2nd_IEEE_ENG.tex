@@ -1,0 +1,164 @@
+% wfs_chapter_hda
+% - Repository https://github.com/spatialaudio/wfs_chapter_hda
+% - Authors' versions for the chapters (English, German) on **Wave Field Synthesis** in
+%   - Stefan Weinzierl (editor): *Handbuch der Audiotechnik*, 2nd GER edition, Springer, 2025
+%   - Stefan Weinzierl (editor): *Handbook of Audio Technology*, 1st ENG edition, Springer, TBA
+%   - https://link.springer.com/book/10.1007/978-3-662-60369-7
+% - Rendered PDF files
+%   - [GER](latex/Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU_b615499.pdf)
+%   - [ENG]() TBD
+% - Licenses
+%   - text and graphics under [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)
+%   - source code under [MIT license](https://opensource.org/licenses/MIT)
+%   - publisher Springer has copyright to their finally edited and by us approved English / German chapters and their layouts
+%   - we use the violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png
+%   to create the files `python/violin_wfs_ENG.png` and `python/violin_wfs_DEU.png`
+%   - we use the photo `fotos/WFS_Array_UniRostockH8_2014.jpg` CC BY 4.0 Matthias Geier & Sascha Spors
+%   - all other graphics (as pdf, png, eps, svn, ipe) in this repository are CC BY 4.0 Frank Schultz & Nara Hahn
+% - Reference implementation
+%   - the reference implementation uses and is double checked against the [sfs](https://github.com/sfstoolbox/sfs-python/releases/tag/0.6.3) toolbox (version >= 0.6.3 is required)
+%   - Python install with `uv` is straightforward using the provided `pyproject.toml`, it just needs `uv sync`
+% - Recommended additional resources
+%   - [The complete basics of wave field synthesis in a nutshell](https://git.iem.at/zotter/wfs-basics)
+%   - [Jupyter notebook on 2.5D WFS referencing scheme examples](https://sfs-python.readthedocs.io/en/latest/examples/wfs-referencing.html)
+% - Authors
+%   - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+%   - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+%   - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+%##############################################################################
+\documentclass[10pt, journal, transmag]{IEEEtran}
+
+%\newcommand*{\SPRINGER}{}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\ifdefined\SPRINGER
+    % either apacite (also check setup at the end of this file):
+    \usepackage{apacite} % closely to the format which the Handbuch asks for
+    % some additional mods to get a similar layout as the Handbuch
+    \renewcommand\bibliographytypesize{\footnotesize}
+    \addtolength{\textheight}{-0.5in}
+    \usepackage{url}
+    \let\cite\shortcite
+\else
+  % or IEEEtran  (also check setup at the end of this file):
+    \usepackage{cite}
+    \usepackage[spaces,hyphens]{xurl}
+    \usepackage[colorlinks,allcolors=C0]{hyperref}
+\fi
+
+\ifdefined\SPRINGER
+% nothing to do -> orcidlink does not work here?!
+\else
+\usepackage{orcidlink}
+\fi
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{trfsigns}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{comment}
+\usepackage{../macro_ENG}  % authors' macros
+
+\includecomment{plotfigures}
+%\excludecomment{plotfigures}
+%
+\makeindex
+%
+% ##############################################################################
+\ifdefined\SPRINGER
+    % use this only when \usepackage{apacite} is used
+    % we try to get close to desired cite/reference style by modifying the apacite
+    % this might be not needed if a dedicated Springer bibstyle is utilized
+
+    % inspired by https://tex.stackexchange.com/questions/123938/modifying-apacite-reference-style
+    \AtBeginDocument{%
+    \renewcommand{\BCBT}{,}
+    \renewcommand{\BCBL}{,}
+    \renewcommand{\BBAA}{and}
+    \renewcommand{\APACjournalVolNumPages}[4]{%
+       \Bem{#1}%             journal
+       \ifx\@empty#2\@empty
+       \else
+         \unskip, \textbf{{#2}}%  volume bold
+       \fi
+       \ifx\@empty#3\@empty
+       \else
+         \unskip{(#3)}%      issue number no space
+       \fi
+       \ifx\@empty#4\@empty
+       \else
+         \unskip, {#4}%      pages
+       \fi
+    }
+    % further stuff derived with apacite manual
+    \renewenvironment{APACrefDOI}{\doiprefix}{}
+    % \renewenvironment{APACrefURL}[2][]{Am #1 zugegriffen auf #2}{}
+    \renewenvironment{APACrefURL}[2][]{On #1 visit at #2}{}
+    \renewcommand{\APACrefbtitle}[2]{#1}}
+    \renewcommand{\APACcitebtitle}[1]{#1}
+\fi
+% ##############################################################################
+
+\begin{document}
+\title{Authors' Version for Chapter 23: Wave Field Synthesis}
+\author{
+% either:
+\ifdefined\SPRINGER
+\IEEEauthorblockN{Frank Schultz, Nara Hahn, Sascha Spors }
+\else
+\IEEEauthorblockN{Frank Schultz\orcidlink{0000-0002-3010-0294} , Nara Hahn\orcidlink{0000-0003-3564-5864} , Sascha Spors\orcidlink{0000-0001-7225-9992} }
+\fi
+% we use thanks section to match it better with the final Springer layout
+\thanks{Frank Schultz, Sascha Spors}
+\thanks{Institute of Communications Engineering, University of Rostock, Germany}
+\thanks{E-Mail: \{frank.schultz, sascha.spors\}@uni-rostock.de}
+%
+\thanks{Nara Hahn}
+\thanks{Institute of Sound and Vibration Research, University of Southampton, UK}
+\thanks{E-Mail: nara.hahn@soton.ac.uk}
+%
+\thanks{Version: \today, submitted draft of Ch.~23 for the English}
+\thanks{version of https://doi.org/10.1007/978-3-662-60369-7}
+}
+%
+\markboth{Schultz, F.; Hahn, N.; Spors, S.: WFS for Weinzierl, S. (Ed.), Handbook of Audio Technology, Springer, 1st English Edition, 2026?}%
+{Schultz, Hahn, Spors: WFS}
+%
+\IEEEtitleabstractindextext{
+%\begin{abstract}
+%\input{abstract_DEU}
+%\end{abstract}
+%
+\begin{IEEEkeywords}
+spatialisation, %Spatialsisierung
+virtual point source, %Virtuelle Punktquelle,
+wave field, %Wellenfeld,
+wavefront, %Wellenfront,
+wavefront curvature, %Wellenfrontkrümmung,
+spatial aliasing %Räumliches Aliasing
+\end{IEEEkeywords}}
+%
+\maketitle
+%
+\section*{Abstract / Summary}
+\input{abstract_ENG}
+%
+\input{wfs_manuscript_ENG}
+%
+\section*{Acknowledgement}
+\input{acknowledgment_ENG}
+%
+\ifdefined\SPRINGER
+    \bibliographystyle{apacite}
+    \bibliography{wfs_references_springer}
+\else
+    \bibliographystyle{IEEEtran}
+    \bibliography{wfs_references}
+\fi
+%
+\printindex
+%
+\end{document}

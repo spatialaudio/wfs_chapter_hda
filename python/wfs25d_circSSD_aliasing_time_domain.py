@@ -1,22 +1,18 @@
 # wfs_chapter_hda
-# - git repository https://github.com/spatialaudio/wfs_chapter_hda
-# - drafts for the chapters (english, german) on **Wave Field Synthesis** for
-# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer, 2025
-# https://link.springer.com/book/10.1007/978-3-662-60369-7
-# - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
-# - source code under MIT license https://opensource.org/licenses/MIT
-# - Springer has copyright to the final english / german chapters and their layouts
-# - we might also find https://git.iem.at/zotter/wfs-basics useful
-# - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+# git repository https://github.com/spatialaudio/wfs_chapter_hda
+# source code under MIT license https://opensource.org/licenses/MIT
 
 # Authors:
-# - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
-# - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
-# - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+# Frank Schultz
+# https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+# Nara Hahn
+# https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+# Sascha Spors
+# https://orcid.org/0000-0001-7225-9992, https://github.com/spors
 
 import matplotlib.pyplot as plt
 import numpy as np
-import sfs  # implemented with version 0.6.2 for correct td.wfs.point25d()
+import sfs  # implemented with version >=0.6.2 for correct td.wfs.point25d()
 from matplotlib.pyplot import get_cmap
 from scipy.signal import firwin
 from util import vec_ps2ss, set_rcparams, wfs_pre_filter_impulse_response
@@ -108,6 +104,7 @@ plt.grid(True)
 
 ###############################################################################
 # ideal prefilter, cf. fig. 2.5 in dissertation Frank Schultz
+# https://doi.org/10.18453/rosdok_id00001765
 Npre = 2**14 + 1  # length FIR
 fnorm = 686
 beta_kaiser = 9
@@ -244,8 +241,10 @@ for x_mic in (-1, 0, +1):
 
     # render plot
     if language == 'DEU':
-        plt.savefig('wfs25d_circSSD_aliasing_time_domain_x%2.2f_m_py_DEU.png' % x_mic,
-                    dpi=1200)
+        plt.savefig(
+            'wfs25d_circSSD_aliasing_time_domain_x%2.2f_m_py_DEU.png' % x_mic,
+            dpi=1200)
     elif language == 'ENG':
-        plt.savefig('wfs25d_circSSD_aliasing_time_domain_x%2.2f_m_py_ENG.png' % x_mic,
-                    dpi=1200)
+        plt.savefig(
+            'wfs25d_circSSD_aliasing_time_domain_x%2.2f_m_py_ENG.png' % x_mic,
+            dpi=1200)

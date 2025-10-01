@@ -1,22 +1,24 @@
 # wfs_chapter_hda
-# - git repository https://github.com/spatialaudio/wfs_chapter_hda
-# - drafts for the chapters (english, german) on **Wave Field Synthesis** for
-# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer,
-# https://link.springer.com/referencework/10.1007/978-3-662-60357-4
-# - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
-# - source code under MIT license https://opensource.org/licenses/MIT
-# - Springer has copyright to the final english / german chapters and their layouts
-# - we might also find https://git.iem.at/zotter/wfs-basics useful
-# - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
-
+# git repository https://github.com/spatialaudio/wfs_chapter_hda
+# source code under MIT license https://opensource.org/licenses/MIT
+#
 # Authors:
-# - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
-# - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
-# - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+# Frank Schultz
+# https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+# Nara Hahn
+# https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+# Sascha Spors
+# https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+#
+# 'uv' is recommended for Python, packaging and environment handling
+# see # https://docs.astral.sh/uv/
+# get environment by `uv sync` called in root folder of this repository
+# the `pyproject.toml` contains all dependencies
+# activate the environment by `source .venv/bin/activate`
 #
 #!/bin/sh
 #
-read -p "conda env is mywfs?! [Enter] start..."
+read -p "env wfs-chapter-hda is active?! [Enter] start..."
 #
 rm -r wfs_chapter_hda_release_DEU
 rm -r wfs_chapter_hda_release_DEU.zip
@@ -31,6 +33,9 @@ cd python
 cd ..
 #
 cp -p README.md wfs_chapter_hda_release_DEU/
+cp -p uv.lock wfs_chapter_hda_release_DEU/
+cp -p pyproject.toml wfs_chapter_hda_release_DEU/
+cp -p .venv/pyvenv.cfg wfs_chapter_hda_release_DEU/
 cp -p macro_DEU.sty wfs_chapter_hda_release_DEU/
 cp -p latex/*_DEU.tex wfs_chapter_hda_release_DEU/latex
 cp -p latex/*.bib wfs_chapter_hda_release_DEU/latex
@@ -38,7 +43,6 @@ cp -p latex/*.bib wfs_chapter_hda_release_DEU/latex
 cp -p graphics_DEU/khi_geometry.pdf wfs_chapter_hda_release_DEU/graphics_DEU
 cp -p graphics_DEU/spa_3d.pdf wfs_chapter_hda_release_DEU/graphics_DEU
 cp -p graphics_DEU/spa_25d.pdf wfs_chapter_hda_release_DEU/graphics_DEU
-cp -p graphics_DEU/WFS_Blockdiagramm.eps wfs_chapter_hda_release_DEU/graphics_DEU
 cp -p graphics_DEU/WFS_Blockdiagramm.png wfs_chapter_hda_release_DEU/graphics_DEU
 #
 cp -p fotos/WFS_Array_UniRostockH8_2014.jpg wfs_chapter_hda_release_DEU/fotos

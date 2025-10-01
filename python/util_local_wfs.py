@@ -1,25 +1,20 @@
 # wfs_chapter_hda
-# - git repository https://github.com/spatialaudio/wfs_chapter_hda
-# - drafts for the chapters (english, german) on **Wave Field Synthesis** for
-# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer, 2025
-# https://link.springer.com/book/10.1007/978-3-662-60369-7
-# - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
-# - source code under MIT license https://opensource.org/licenses/MIT
-# - Springer has copyright to the final english / german chapters and their layouts
-# - we might also find https://git.iem.at/zotter/wfs-basics useful
-# - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+# git repository https://github.com/spatialaudio/wfs_chapter_hda
+# source code under MIT license https://opensource.org/licenses/MIT
 
 # Authors:
-# - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
-# - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
-# - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+# Nara Hahn (main author)
+# https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+# Frank Schultz
+# https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+# Sascha Spors
+# https://orcid.org/0000-0001-7225-9992, https://github.com/spors
 
-# local WFS method presented in
-# Nara Hahn, Frank Schultz, Sascha Spors (2022): "Cylindrical Radial Filter Design
-# With Application to Local Wave Field Synthesis" J. Aud. Eng. Soc. 70(6):510-525,
-# June 2022
-
-# code's main author: Nara Hahn
+# helper functions to implement the local WFS method presented in
+# Nara Hahn, Frank Schultz, Sascha Spors (2022):
+# "Cylindrical Radial Filter Design With Application to
+# Local Wave Field Synthesis"
+# J. Aud. Eng. Soc. 70(6):510-525, June 2022
 
 import sfs
 import numpy as np

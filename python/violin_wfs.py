@@ -1,18 +1,14 @@
 # wfs_chapter_hda
-# - git repository https://github.com/spatialaudio/wfs_chapter_hda
-# - drafts for the chapters (english, german) on **Wave Field Synthesis** for
-# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer, 2025
-# https://link.springer.com/book/10.1007/978-3-662-60369-7
-# - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
-# - source code under MIT license https://opensource.org/licenses/MIT
-# - Springer has copyright to the final english / german chapters and their layouts
-# - we might also find https://git.iem.at/zotter/wfs-basics useful
-# - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+# git repository https://github.com/spatialaudio/wfs_chapter_hda
+# source code under MIT license https://opensource.org/licenses/MIT
 
 # Authors:
-# - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
-# - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
-# - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+# Frank Schultz
+# https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+# Nara Hahn
+# https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+# Sascha Spors
+# https://orcid.org/0000-0001-7225-9992, https://github.com/spors
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -137,12 +133,12 @@ if language == 'DEU':
     # ax[0].set_title('Aufnahme')
     # ax[1].set_title('Wiedergabe')
 elif language == 'ENG':
-    ax[0].text(0.9, -2.8, 'microphone wall', fontsize=5, rotation=90)
-    ax[1].text(0.9, -2.8, 'loudspeaker wall', fontsize=5, rotation=90)
+    ax[0].text(0.9, -3.3, 'screen of microphones', fontsize=5, rotation=90)
+    ax[1].text(0.9, -3.3, 'screen of loudspeakers', fontsize=5, rotation=90)
     ax[1].text(-0.9, -1.6, r'no sound', fontsize=5, rotation=60)
     ax[0].text(-0.9, -3.9, r'recording', fontsize=5, rotation=0)
     ax[1].text(-0.9, -3.9, r'playback', fontsize=5, rotation=0)
-    # ax[0].set_title('Aufnahme')
-    # ax[1].set_title('Wiedergabe')
+    # ax[0].set_title('Recording')
+    # ax[1].set_title('Playback')
 
 plt.savefig('violin_wfs_'+language+'.png')

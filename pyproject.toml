@@ -1,0 +1,26 @@
+[project]
+name = "wfs-chapter-hda"
+license = "MIT"
+version = "0.1.0"
+description = "Chapter on Wave Field Synthesis in Handbook of Audio Technology"
+readme = "README.md"
+authors = [
+  { name = "Frank Schultz" },
+  { name = "Nara Hahn" },
+  { name = "Sascha Spors" }]
+maintainers = [
+  {name = "Frank Schultz"}]
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel",
+    "matplotlib >= 3.10",
+    "numpy >= 2",
+    "scipy >= 1.16",
+    "sfs >= 0.6.3",
+]
+
+[project.urls]
+Repository = "https://github.com/spatialaudio/wfs_chapter_hda"
+
+#[tool.uv.sources]
+#sfs = { path = "../sfs-python", editable = true }

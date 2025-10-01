@@ -1,18 +1,14 @@
 # wfs_chapter_hda
-# - git repository https://github.com/spatialaudio/wfs_chapter_hda
-# - drafts for the chapters (english, german) on **Wave Field Synthesis** for
-# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer, 2025
-# https://link.springer.com/book/10.1007/978-3-662-60369-7
-# - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
-# - source code under MIT license https://opensource.org/licenses/MIT
-# - Springer has copyright to the final english / german chapters and their layouts
-# - we might also find https://git.iem.at/zotter/wfs-basics useful
-# - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+# git repository https://github.com/spatialaudio/wfs_chapter_hda
+# source code under MIT license https://opensource.org/licenses/MIT
 
 # Authors:
-# - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
-# - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
-# - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+# Frank Schultz
+# https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+# Nara Hahn
+# https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+# Sascha Spors
+# https://orcid.org/0000-0001-7225-9992, https://github.com/spors
 
 # own code taken from https://git.iem.at/zotter/wfs-basics
 # version SHA 2829319b as of 2020-10-24
@@ -188,9 +184,8 @@ ax[1].set_yticklabels([])
 plt.savefig('wfs25d_circSSD_aliasing.png')
 
 # SFS Toolbox Stuff -----------------------------------------------------------
-# if we use the sfs toolbox https://github.com/sfstoolbox/sfs-python.git
-# checked for https://github.com/sfstoolbox/sfs-python/commit/21553ec9a1fbeddc766bd114c2789137123f7c08  # noqa
-# we can implement some one liners:
+# if we use the sfs toolbox https://github.com/sfstoolbox/sfs-python/
+# version >=0.6.3 we can implement this with few lines:
 sfs.default.c = c
 grid = sfs.util.xyz_grid([xmin, xmax], [ymin, ymax], 0, spacing=0.01953125)
 array = sfs.array.circular(N, R)

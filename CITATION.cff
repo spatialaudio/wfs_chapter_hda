@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software/project, please cite it as below."
 authors:
 - family-names: "Schultz"
   given-names: "Frank"
@@ -11,7 +11,7 @@ authors:
   given-names: "Sascha"
   orcid: "https://orcid.org/0000-0001-7225-9992"
 title: "wfs_chapter_hda"
-version: 0.0
+version: 0.1.0
 doi: 10.5281/zenodo.8060879
 date-released: 2023-06-20
 url: "https://github.com/spatialaudio/wfs_chapter_hda"

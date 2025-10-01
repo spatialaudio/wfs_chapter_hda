@@ -1,18 +1,14 @@
 # wfs_chapter_hda
-# - git repository https://github.com/spatialaudio/wfs_chapter_hda
-# - drafts for the chapters (english, german) on **Wave Field Synthesis** for
-# Stefan Weinzierl (ed.): *Handbuch der Audiotechnik*, 2nd ed., Springer, 2025
-# https://link.springer.com/book/10.1007/978-3-662-60369-7
-# - text and graphics under CC BY 4.0 license https://creativecommons.org/licenses/by/4.0/
-# - source code under MIT license https://opensource.org/licenses/MIT
-# - Springer has copyright to the final english / german chapters and their layouts
-# - we might also find https://git.iem.at/zotter/wfs-basics useful
-# - we use violine image from https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Violin.svg/2048px-Violin.svg.png to create picture `python/violin_wfs.png`
+# git repository https://github.com/spatialaudio/wfs_chapter_hda
+# source code under MIT license https://opensource.org/licenses/MIT
 
 # Authors:
-# - Frank Schultz, https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
-# - Nara Hahn, https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
-# - Sascha Spors, https://orcid.org/0000-0001-7225-9992, https://github.com/spors
+# Nara Hahn
+# https://orcid.org/0000-0003-3564-5864, https://github.com/narahahn
+# Frank Schultz
+# https://orcid.org/0000-0002-3010-0294, https://github.com/fs446
+# Sascha Spors
+# https://orcid.org/0000-0001-7225-9992, https://github.com/spors
 
 import numpy as np
 import sfs
@@ -53,7 +49,8 @@ def plot_soundfield(ax, grid, p):
 
 def plot_loudspeakers(ax, ssd):
     plt.sca(ax)  # set to current axis
-    ls = sfs.plot2d.loudspeakers(ssd.x, ssd.n, ssd.a, size=0.3, show_numbers=True)
+    ls = sfs.plot2d.loudspeakers(
+        ssd.x, ssd.n, ssd.a, size=0.3, show_numbers=True)
     return ls
 
 
@@ -76,8 +73,9 @@ def plot_ir(ax, t, h):
     ax.set_yticks(np.arange(-30, +15+3, 3))
     ax.set_xlabel(r'$t$ / ms')
     ax.set_ylabel(r'$\rightarrow$ dB$_\mathrm{rel\,30k}$')
-    ax.set_yticklabels(['-30', '', '', '', '', '-15', '', '', '', '', '0',
-                         '', '', '', '', '15'])
+    ax.set_yticklabels(
+        ['-30', '', '', '', '', '-15', '', '',
+         '', '', '0', '', '', '', '', '15'])
     return lines
 
 
@@ -104,7 +102,9 @@ def plot_spectrum(ax, f, H):
     ax.set_xlim(10, 20000)
     ax.set_ylim(-18, 24)
     ax.set_xticks([10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000])
-    ax.set_xticklabels(['10', '20', '50', '100', '200', '500', '1k', '2k', '5k', '10k', '20k'])
+    ax.set_xticklabels(
+        ['10', '20', '50', '100', '200', '500',
+         '1k', '2k', '5k', '10k', '20k'])
     ax.set_yticks(np.arange(-18, 24 + 6, 6))
     ax.set_xlabel(r'$f$ / Hz')
     ax.set_ylabel(r'$\rightarrow$ dB$_\mathrm{rel\,1}$')
@@ -147,7 +147,8 @@ def plot_all(results):
 
 def save_plots(fig, refpointname, language='DEU'):
     kw_savefig = dict(bbox_inches='tight', dpi=300)
-    figname = 'lwfs25d_circSSD_time_domain_{}_py_{}.png'.format(refpointname, language)
+    figname = 'lwfs25d_circSSD_time_domain_{}_py_{}.png'.format(refpointname,
+                                                                language)
     plt.savefig(figname, **kw_savefig)
 
 
@@ -211,9 +212,11 @@ scaling = fs / (2*cutoff)
 
 # Target positions
 lwfs_params = [
-    dict(name='offcenter', xc=np.array([0, 0.75, 0]), max_order=15, max_degree=30, beta=6,
+    dict(name='offcenter', xc=np.array([0, 0.75, 0]),
+         max_order=15, max_degree=30, beta=6,
          poly_name='lagrange', poly_order=5, deriv_order=5, sss_order=20),
-    dict(name='center', xc=np.array([0, 0, 0]), max_order=15, max_degree=30, beta=6,
+    dict(name='center', xc=np.array([0, 0, 0]),
+         max_order=15, max_degree=30, beta=6,
          poly_name='lagrange', poly_order=5, deriv_order=5, sss_order=20),
     ]
 
@@ -221,8 +224,11 @@ lwfs_params = [
 # evaluation positions relative to the target position
 r = 0.3
 beta = np.pi/2
-evaluation_positions = np.stack([[*sph2cart(alpha, beta, r)] for
-                         alpha in np.linspace(0, 2*np.pi, num=8, endpoint=False)])
+evaluation_positions = np.stack([[*sph2cart(alpha, beta, r)]
+                                 for alpha in np.linspace(0,
+                                                          2*np.pi,
+                                                          num=8,
+                                                          endpoint=False)])
 evaluation_positions = np.insert(evaluation_positions, 0, [0, 0, 0], axis=0)
 
 lwfs_results = []
@@ -238,13 +244,14 @@ for par in lwfs_params:
     max_order = par['max_order']
     t0 = np.dot(npw, xc) / c
     sss_order = par['sss_order']
-    d_raw = wfs_25d_pw_sht(x0, n0, npw, xc, max_order, c, fs, method_bl, sss_order)
+    d_raw = wfs_25d_pw_sht(x0, n0, npw, xc, max_order, c, fs,
+                           method_bl, sss_order)
     d_eq = (np.stack([conv(hpre, di) for di in d_raw[0].T], axis=-1),
             d_raw[1], d_raw[2] - delay_preeq)
 
     # synthesized sound field
     p = sfs.td.synthesize(d_eq, ssd_weights, ssd, secondary_source,
-                           grid=grid, observation_time=t0)
+                          grid=grid, observation_time=t0)
     # impulse responses
     time = np.zeros((len(evaluation_positions), 2*fs))
     h = np.zeros((len(evaluation_positions), 2*fs))
@@ -259,7 +266,8 @@ for par in lwfs_params:
         h[i] = ir
         H[i] = tf
 
-    res = dict(name=par['name'], xc=xc, d=d_eq, p=p, time=time, h=h, H=H, scaling=scaling)
+    res = dict(name=par['name'], xc=xc, d=d_eq, p=p, time=time, h=h, H=H,
+               scaling=scaling)
     lwfs_results.append(res)
 
 
