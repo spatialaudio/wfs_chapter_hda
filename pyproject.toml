@@ -1,7 +1,7 @@
 [project]
 name = "wfs-chapter-hda"
 license = "MIT"
-version = "0.1.0"
+version = "0.4.0"
 description = "Chapter on Wave Field Synthesis in Handbook of Audio Technology"
 readme = "README.md"
 authors = [

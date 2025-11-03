@@ -240,8 +240,8 @@ for cnt, (k, w) in enumerate(zip(kv, wv)):
 # normalize to 0 dB level at ref curve:
 p_freq_resp *= 4*np.pi*np.linalg.norm(x0)
 
-fl = 75  # Hz, shelving wfs pre-filter lower cut-off
-fh = fal  # Hz, shelving wfs pre-filter higher cut-off
+fl = 75  # Hz, shelving wfs prefilter lower cut-off
+fh = fal  # Hz, shelving wfs prefilter higher cut-off
 
 sos = wfs_pre_filter_shelving_sos(fl=2**1, fh=2**17, c=c, biquad_per_octave=3)
 _, H_ideal = sosfreqs(sos, worN=2*np.pi*fv, plot=None)
@@ -288,7 +288,7 @@ if language == 'DEU':
                    'C3--', label=r'Flanke Aliasing', zorder=4)
 elif language == 'ENG':
     ax[0].semilogx(fv, 20*np.log10(np.abs(p_freq_resp_ideal)), 'C0', lw=1.75,
-                   label='frequency response with pre-filter', zorder=2)
+                   label='frequency response with prefilter', zorder=2)
     ax[0].semilogx(fv, 20*np.log10(np.abs(p_freq_resp_shelving)), 'C1', lw=1,
                    label='frequency response with shelving EQ', zorder=5)
     ax[0].semilogx([2**-4 * fl, fl], [-3*4, 0],
@@ -317,7 +317,7 @@ elif language == 'ENG':
         fv,
         20*np.log10(np.abs(np.sqrt(1j*2*np.pi*fv/c))),
         'C0', lw=1.75,
-        label=r'pre-filter $\sqrt{\mathrm{j}\omega/c}$, +3\,dB/oct')
+        label=r'prefilter $\sqrt{\mathrm{j}\omega/c}$, +3\,dB/oct')
     ax[1].semilogx(
         fv,
         20*np.log10(np.abs(H_shelving)),
