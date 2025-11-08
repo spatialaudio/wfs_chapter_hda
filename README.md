@@ -30,7 +30,7 @@ WFS is used in loudspeaker-based auralisation, reverberation enhancement, 3D sou
 
 ## Rendered PDF Files of the Chapter
   - [author's German version that was submitted to publisher](latex/Schultz_2023_WFS_Chapter_Weinzierl_HdA2nd_IEEE_DEU_b615499.pdf)
-  - [author's English version that was submitted to publisher](latex/) TBD
+  - [author's English version that was submitted to publisher](latex/Schultz_2025_WFS_Chapter_Weinzierl_HdA2nd_IEEE_ENG_db56c01)
 
 ## Zenodo Versions / Snapshots of the Repository with DOI
   - https://doi.org/10.5281/zenodo.8060879 (author's German version that was submitted to publisher)
