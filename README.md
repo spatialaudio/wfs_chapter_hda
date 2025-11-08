@@ -34,7 +34,8 @@ WFS is used in loudspeaker-based auralisation, reverberation enhancement, 3D sou
 
 ## Zenodo Versions / Snapshots of the Repository with DOI
   - https://doi.org/10.5281/zenodo.8060879 (author's German version that was submitted to publisher)
-  - https://doi.org/xxx (author's English version that was submitted to publisher) TBD
+  - https://doi.org/10.5281/zenodo.17560617 (author's English version that was submitted to publisher)
+  can be cited as: Schultz, F., Hahn, N., & Spors, S. (2025). Wave Field Synthesis (v0.4). Zenodo. https://doi.org/10.5281/zenodo.17560617
 
 ## Licenses
   - text and graphics under [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)
